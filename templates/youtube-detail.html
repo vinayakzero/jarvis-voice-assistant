@@ -96,7 +96,7 @@
       <!-- Video 1 -->
       <div class="work-card" onclick="openVideoModal('yt1')">
         <div class="work-thumb">
-          <img src="assets/images/yt_thumb_1.jpg" alt="The Dark Reality of AI">
+          <img src="{{ url_for('static', filename='images/yt_thumb_1.jpg') }}" alt="The Dark Reality of AI">
           <div class="play-overlay"><div class="play-btn"><i data-lucide="play"></i></div></div>
         </div>
         <div class="work-info">
@@ -108,7 +108,7 @@
       <!-- Video 2 -->
       <div class="work-card" onclick="openVideoModal('yt2')">
         <div class="work-thumb">
-          <img src="assets/images/yt_thumb_2.jpg" alt="India in 2030 - A Vision">
+          <img src="{{ url_for('static', filename='images/yt_thumb_2.jpg') }}" alt="India in 2030 - A Vision">
           <div class="play-overlay"><div class="play-btn"><i data-lucide="play"></i></div></div>
         </div>
         <div class="work-info">
@@ -120,7 +120,7 @@
       <!-- Video 3 -->
       <div class="work-card" onclick="openVideoModal('yt3')">
         <div class="work-thumb">
-          <img src="assets/images/yt_thumb_3.jpg" alt="Documentary Making Process">
+          <img src="{{ url_for('static', filename='images/yt_thumb_3.jpg') }}" alt="Documentary Making Process">
           <div class="play-overlay"><div class="play-btn"><i data-lucide="play"></i></div></div>
         </div>
         <div class="work-info">
@@ -138,8 +138,8 @@
     <div class="modal-container">
       <button id="modalClose" class="modal-close"><i data-lucide="x"></i></button>
       <h3 id="modalVideoTitle" style="font-family: var(--font-heading); font-size: 1.3rem; font-weight: 800; margin-bottom: 16px;">Video Player</h3>
-      <div style="position: relative; padding-top: 56.25%; width: 100%; border-radius: 12px; overflow: hidden; background: #000;">
-        <iframe id="modalVideoFrame" style="position: absolute; top:0; left:0; width:100%; height:100%; border:none;" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      <div class="video-iframe-wrapper">
+        <iframe id="modalIframe" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
     </div>
   </div>
@@ -148,7 +148,7 @@
     <p>© 2026 Vinayak Vallabh Rai. Creator of The Prime Doc.</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
   <script>lucide.createIcons();</script>
 </body>
 </html>

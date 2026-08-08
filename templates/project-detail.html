@@ -103,7 +103,7 @@
       </div>
 
       <div style="position: relative; width: 100%; padding-top: 45%; border-radius: 16px; overflow: hidden; margin-bottom: 24px;">
-        <img src="assets/images/proj_doc.jpg" alt="Documentary Edit" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit: cover;">
+        <img src="{{ url_for('static', filename='images/proj_doc.jpg') }}" alt="Documentary Edit" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit: cover;">
       </div>
 
       <div class="specs-grid">
@@ -151,7 +151,7 @@
       </div>
 
       <div style="position: relative; width: 100%; padding-top: 45%; border-radius: 16px; overflow: hidden; margin-bottom: 24px;">
-        <img src="assets/images/proj_watch.jpg" alt="Product Ads Video" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit: cover;">
+        <img src="{{ url_for('static', filename='images/proj_watch.jpg') }}" alt="Product Ads Video" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit: cover;">
       </div>
 
       <div class="specs-grid">
@@ -192,7 +192,7 @@
       </div>
 
       <div style="position: relative; width: 100%; padding-top: 45%; border-radius: 16px; overflow: hidden; margin-bottom: 24px;">
-        <img src="assets/images/proj_trailer.jpg" alt="Cinematic Trailer" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit: cover;">
+        <img src="{{ url_for('static', filename='images/proj_trailer.jpg') }}" alt="Cinematic Trailer" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit: cover;">
       </div>
 
       <p style="color: var(--text-muted); line-height: 1.7;">
@@ -213,7 +213,7 @@
       </div>
 
       <div style="position: relative; width: 100%; padding-top: 45%; border-radius: 16px; overflow: hidden; margin-bottom: 24px;">
-        <img src="assets/images/proj_ai.jpg" alt="AI UGC Video" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit: cover;">
+        <img src="{{ url_for('static', filename='images/proj_ai.jpg') }}" alt="AI UGC Video" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit: cover;">
       </div>
 
       <p style="color: var(--text-muted); line-height: 1.7;">
@@ -238,7 +238,7 @@
     <p>© 2026 Vinayak Vallabh Rai. Mohali, Punjab, India.</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
   <script>lucide.createIcons();</script>
 </body>
 </html>
