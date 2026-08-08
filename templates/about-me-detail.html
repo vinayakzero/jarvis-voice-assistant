@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me - Vinayak Vallabh Rai | Designer & Video Editor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    .page-hero { padding-top: 140px; padding-bottom: 60px; }
+    .about-card-large {
+      background: var(--bg-card);
+      border: 1px solid var(--bg-card-border);
+      border-radius: 24px;
+      padding: 40px;
+      margin-bottom: 40px;
+    }
+    .spec-badge {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 16px 20px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .spec-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      background: rgba(190, 242, 100, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-lime);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER & NAVIGATION -->
+  <header class="navbar">
+    <div class="container">
+      <a href="{{ url_for('home') }}" class="logo">
+        <span class="logo-badge">VR</span>
+      </a>
+      
+      <nav>
+        <ul class="nav-links">
+          <li><a href="{{ url_for('home') }}">HOME</a></li>
+          <li><a href="{{ url_for('about') }}" class="active">ABOUT</a></li>
+          <li><a href="{{ url_for('skills') }}">SKILLS</a></li>
+          <li><a href="{{ url_for('projects') }}">WORK</a></li>
+          <li><a href="{{ url_for('youtube') }}">YOUTUBE</a></li>
+          <li><a href="{{ url_for('contact') }}">CONTACT</a></li>
+        </ul>
+      </nav>
+      
+      <a href="{{ url_for('contact') }}" class="btn-work-together">Let's Work Together</a>
+    </div>
+  </header>
+
+  <!-- MAIN ABOUT CONTENT -->
+  <main class="section-padding" style="padding-top: 120px;">
+    <div class="container">
+      
+      <!-- Back Button -->
+      <a href="{{ url_for('home') }}" class="btn-secondary" style="display: inline-flex; align-items: center; gap: 8px; margin-bottom: 30px;">
+        <i data-lucide="arrow-left"></i> Back to Homepage
+      </a>
+      
+      <div style="display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 40px; align-items: center; margin-bottom: 48px;">
+        
+        <!-- Studio Photo -->
+        <div style="border-radius: 24px; overflow: hidden; border: 1px solid var(--bg-card-border); box-shadow: 0 20px 50px rgba(0,0,0,0.6);">
+          <img src="{{ url_for('static', filename='images/vinayak_studio.jpg') }}" alt="Vinayak Vallabh Rai Studio Setup" style="width: 100%; height: auto; display: block; object-fit: cover;">
+        </div>
+
+      <!-- Main Overview -->
+      <div>
+        <span class="section-tag">PERSONAL STORY & CREATIVE VISION</span>
+        <h1 style="font-family: var(--font-heading); font-size: 2.8rem; font-weight: 900; line-height: 1.1; margin-bottom: 16px;">
+          ABOUT <span class="text-gradient">VINAYAK VALLABH RAI</span>
+        </h1>
+        <p style="color: var(--accent-lime); font-size: 1.1rem; font-weight: 700; margin-bottom: 20px;">
+          Designer • Video Editor • AI Content Creator
+        </p>
+        <p style="color: var(--text-muted); line-height: 1.75; font-size: 0.98rem; margin-bottom: 16px;">
+          I am a passionate Designer and Video Editor with a strong interest in creating visual content that connects, inspires, and delivers real-world results. I love working with new ideas, brands, and content creators to turn visions into high-impact digital experiences.
+        </p>
+        <p style="color: var(--text-muted); line-height: 1.75; font-size: 0.98rem; margin-bottom: 24px;">
+          Currently based in <strong>Mohali, Punjab, India</strong>, my editing style combines cinematic storytelling with high-retention pacing, advanced VFX compositing, and generative AI video tools. I am also the founder of <strong>The Prime Doc</strong> YouTube channel.
+        </p>
+
+        <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+          <a href="resume-preview.html" class="btn-primary">Download Resume <i data-lucide="download"></i></a>
+          <a href="contact.html" class="btn-secondary">Hire Me For Project <i data-lucide="mail"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CARDS & DETAILS GRID -->
+    <div class="about-card-large">
+      <div class="box-header" style="margin-bottom: 24px;">
+        <div class="box-icon">
+          <i data-lucide="monitor"></i>
+        </div>
+        <h2 style="font-family: var(--font-heading); font-size: 1.8rem; font-weight: 900;">EDITING SETUP & WORKSTATION SPECS</h2>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+        
+        <div class="spec-badge">
+          <div class="spec-icon"><i data-lucide="cpu"></i></div>
+          <div>
+            <label style="font-size: 0.7rem; color: var(--text-muted); font-weight: 700; display: block;">HIGH PERFORMANCE CPU</label>
+            <strong style="color: #fff; font-size: 0.95rem;">Multi-Threaded Rendering</strong>
+          </div>
+        </div>
+
+        <div class="spec-badge">
+          <div class="spec-icon"><i data-lucide="layers"></i></div>
+          <div>
+            <label style="font-size: 0.7rem; color: var(--text-muted); font-weight: 700; display: block;">DUAL MONITOR DISPLAY</label>
+            <strong style="color: #fff; font-size: 0.95rem;">Timeline + Color Preview</strong>
+          </div>
+        </div>
+
+        <div class="spec-badge">
+          <div class="spec-icon"><i data-lucide="headphones"></i></div>
+          <div>
+            <label style="font-size: 0.7rem; color: var(--text-muted); font-weight: 700; display: block;">AUDIO MONITORING</label>
+            <strong style="color: #fff; font-size: 0.95rem;">Foley & Sound Design Studio</strong>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- WHAT DRIVES ME -->
+    <div class="about-card-large">
+      <div class="box-header" style="margin-bottom: 20px;">
+        <div class="box-icon">
+          <i data-lucide="target"></i>
+        </div>
+        <h2 style="font-family: var(--font-heading); font-size: 1.8rem; font-weight: 900;">MY EDITING PHILOSOPHY</h2>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; color: var(--text-muted); line-height: 1.7;">
+        <div style="background: #09090f; padding: 24px; border-radius: 16px;">
+          <h4 style="color: #fff; font-size: 1.1rem; margin-bottom: 8px;">1. Story First Approach</h4>
+          <p style="font-size: 0.9rem;">Every cut, sound effect, and visual effect must serve the core narrative to keep viewers hooked from the first 5 seconds to the end.</p>
+        </div>
+
+        <div style="background: #09090f; padding: 24px; border-radius: 16px;">
+          <h4 style="color: #fff; font-size: 1.1rem; margin-bottom: 8px;">2. Generative AI Integration</h4>
+          <p style="font-size: 0.9rem;">Leveraging AI prompt tools and neural video engines to create graphics and effects that traditional workflows cannot replicate.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer-bottom container">
+    <p>© 2026 Vinayak Vallabh Rai. Mohali, Punjab, India.</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

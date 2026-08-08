@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume - Vinayak Vallabh Rai | Video Editor & Motion Graphics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    .resume-container {
+      max-width: 1000px;
+      margin: 120px auto 60px;
+      padding: 0 20px;
+    }
+    .resume-frame {
+      background: #111118;
+      border: 1px solid var(--bg-card-border);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+    }
+    .resume-frame img {
+      width: 100%;
+      height: auto;
+      display: block;
+      image-rendering: high-quality;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo"><span class="logo-badge">VR</span></a>
+      <div style="display: flex; gap: 12px;">
+        <a href="assets/Vinayak_Vallabh_Rai_Resume.jpg" download="Vinayak_Vallabh_Rai_Resume.jpg" class="btn-primary" onclick="showToast('Downloading High-Res Resume...')">
+          Download Resume File <i data-lucide="download"></i>
+        </a>
+        <a href="index.html" class="btn-secondary">Back To Portfolio</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="resume-container">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; flex-wrap: wrap; gap: 16px;">
+      <div>
+        <h1 style="font-family: var(--font-heading); font-size: 2.2rem; font-weight: 900;">OFFICIAL RESUME</h1>
+        <p style="color: var(--text-muted); font-size: 0.95rem;">Vinayak Vallabh Rai • Video Editor | AI Content Creator | Motion Graphics</p>
+      </div>
+      <a href="assets/Vinayak_Vallabh_Rai_Resume.jpg" download="Vinayak_Vallabh_Rai_Resume.jpg" class="btn-primary" onclick="showToast('Downloading High-Res Resume...')">
+      <a href="{{ url_for('static', filename='images/Vinayak_Vallabh_Rai_Resume.jpg') }}" download="Vinayak_Vallabh_Rai_Resume.jpg" class="btn-primary" onclick="showToast('Downloading High-Res Resume...')">
+        Click To Download Resume <i data-lucide="download"></i>
+      </a>
+    </div>
+
+    <!-- Ultra High Resolution Official Resume Document Display -->
+    <div class="resume-frame">
+      <img src="{{ url_for('static', filename='images/Vinayak_Vallabh_Rai_Resume.jpg') }}" alt="Vinayak Vallabh Rai Resume Document" id="resumeImage">
+    </div>
+
+    <div style="display: flex; justify-content: center; margin-top: 32px;">
+      <a href="{{ url_for('static', filename='images/Vinayak_Vallabh_Rai_Resume.jpg') }}" download="Vinayak_Vallabh_Rai_Resume.jpg" class="btn-primary" style="padding: 16px 36px; font-size: 1rem;" onclick="showToast('Downloading High-Res Resume...')">
+        Click To Download High-Res Resume File <i data-lucide="download"></i>
+      </a>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="toastNotification" class="toast-container">
+    <div class="toast">
+      <i data-lucide="check-circle" style="color: var(--accent-lime);"></i>
+      <span id="toastMessage">Action completed!</span>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>
