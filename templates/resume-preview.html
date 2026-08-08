@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
   <script src="https://unpkg.com/lucide@latest"></script>
   <style>
     .resume-container {
@@ -51,7 +51,6 @@
         <h1 style="font-family: var(--font-heading); font-size: 2.2rem; font-weight: 900;">OFFICIAL RESUME</h1>
         <p style="color: var(--text-muted); font-size: 0.95rem;">Vinayak Vallabh Rai • Video Editor | AI Content Creator | Motion Graphics</p>
       </div>
-      <a href="assets/Vinayak_Vallabh_Rai_Resume.jpg" download="Vinayak_Vallabh_Rai_Resume.jpg" class="btn-primary" onclick="showToast('Downloading High-Res Resume...')">
       <a href="{{ url_for('static', filename='images/Vinayak_Vallabh_Rai_Resume.jpg') }}" download="Vinayak_Vallabh_Rai_Resume.jpg" class="btn-primary" onclick="showToast('Downloading High-Res Resume...')">
         Click To Download Resume <i data-lucide="download"></i>
       </a>

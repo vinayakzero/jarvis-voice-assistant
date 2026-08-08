@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
@@ -15,26 +15,26 @@
   <!-- HEADER -->
   <header class="navbar">
     <div class="container">
-      <a href="index.html" class="logo">
+      <a href="{{ url_for('home') }}" class="logo">
         <span class="logo-badge">VR</span>
       </a>
       <nav>
         <ul class="nav-links">
-          <li><a href="index.html">HOME</a></li>
-          <li><a href="about-me-detail.html">ABOUT</a></li>
-          <li><a href="skills-detail.html">SKILLS</a></li>
-          <li><a href="project-detail.html">WORK</a></li>
-          <li><a href="youtube-detail.html" class="active">YOUTUBE</a></li>
-          <li><a href="contact.html">CONTACT</a></li>
+          <li><a href="{{ url_for('home') }}">HOME</a></li>
+          <li><a href="{{ url_for('about') }}">ABOUT</a></li>
+          <li><a href="{{ url_for('skills') }}">SKILLS</a></li>
+          <li><a href="{{ url_for('projects') }}">WORK</a></li>
+          <li><a href="{{ url_for('youtube') }}" class="active">YOUTUBE</a></li>
+          <li><a href="{{ url_for('contact') }}">CONTACT</a></li>
         </ul>
       </nav>
-      <button onclick="location.href='contact.html'" class="btn-work-together">Let's Work Together</button>
+      <a href="{{ url_for('contact') }}" class="btn-work-together">Let's Work Together</a>
     </div>
   </header>
 
   <div class="container" style="padding-top: 140px; padding-bottom: 60px;">
     
-    <a href="index.html#youtube" style="color: var(--accent-lime); text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px;">
+    <a href="{{ url_for('home') }}" style="color: var(--accent-lime); text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px;">
       <i data-lucide="arrow-left"></i> Back to Home
     </a>
 
