@@ -1,7 +1,7 @@
 import os
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, send_from_directory
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static', static_url_path='/static')
 app.secret_key = 'vinayak_vallabh_rai_secret_key_2026'
 
 @app.route('/')
@@ -31,21 +31,21 @@ def youtube():
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
     if request.method == 'POST':
-        # Process contact form submission via AJAX or POST
         name = request.form.get('name')
         email = request.form.get('email')
         subject = request.form.get('subject')
         message = request.form.get('message')
-        
-        # Log message or send email logic here
-        print(f"New Inquiry from {name} ({email}): {subject} - {message}")
         return jsonify({'status': 'success', 'message': f'Thank you {name}, your message has been sent successfully!'})
-        
     return render_template('contact.html', active_page='contact')
 
 @app.route('/resume')
 def resume():
     return render_template('resume-preview.html', active_page='resume')
+
+# Explicit static file handler for Vercel Serverless Python
+@app.route('/static/<path:filename>')
+def serve_static(filename):
+    return send_from_directory('static', filename)
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
