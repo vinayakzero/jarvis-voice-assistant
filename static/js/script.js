@@ -230,10 +230,42 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
+      const nameInput = contactForm.querySelector('input[type="text"]');
+      const emailInput = contactForm.querySelector('input[type="email"]');
+      const serviceSelect = contactForm.querySelector('select');
+      const messageInput = contactForm.querySelector('textarea');
+
+      const name = nameInput ? nameInput.value : 'Client';
+      const email = emailInput ? emailInput.value : '';
+      const service = serviceSelect ? serviceSelect.value : 'General Inquiry';
+      const message = messageInput ? messageInput.value : '';
+
       closeContactModal();
-      showToast("Message Sent! Vinayak will connect with you within 24 hours.");
+      showToast("Sending your inquiry to Vinayak's Gmail...");
+
+      try {
+        await fetch('https://formsubmit.co/ajax/mail2vinayakvallabhrai@gmail.com', {
+          method: 'POST',
+          headers: { 
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify({
+            _subject: `New Quick Inquiry from ${name} [VisualNexa Studio Modal]`,
+            _template: 'table',
+            Name: name,
+            Email: email,
+            Service: service,
+            Message: message
+          })
+        });
+      } catch (err) {
+        console.log('Modal delivery error:', err);
+      }
+
+      showToast("Inquiry Delivered! Vinayak will email you within 24 hours.");
       contactForm.reset();
     });
   }

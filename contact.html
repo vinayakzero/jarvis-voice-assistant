@@ -159,11 +159,40 @@
     </div>
   </section>
 
+  <!-- SUCCESS MODAL (EMAIL SENT + WHATSAPP INSTANT CONNECT) -->
+  <div id="successInquiryModal" class="modal-overlay">
+    <div class="modal-container" style="max-width: 540px; text-align: center; padding: 40px 32px;">
+      <button class="modal-close" onclick="closeSuccessModal()"><i data-lucide="x"></i></button>
+      <div style="width: 70px; height: 70px; border-radius: 50%; background: rgba(56, 189, 248, 0.15); border: 2px solid var(--accent-cyan); display: flex; align-items: center; justify-content: center; margin: 0 auto 20px auto; color: var(--accent-cyan);">
+        <i data-lucide="check" style="width: 36px; height: 36px;"></i>
+      </div>
+      <h3 style="font-family: var(--font-heading); font-size: 1.6rem; font-weight: 800; margin-bottom: 12px; color: #fff;">Inquiry Sent Successfully!</h3>
+      <p style="color: var(--text-sub); font-size: 0.95rem; line-height: 1.6; margin-bottom: 24px;">
+        Your project details have been delivered directly to <strong>mail2vinayakvallabhrai@gmail.com</strong>. Vinayak will review and reply within 24 hours.
+      </p>
+      
+      <div style="background: rgba(34, 197, 94, 0.08); border: 1px solid rgba(34, 197, 94, 0.25); border-radius: 16px; padding: 20px; margin-bottom: 24px; text-align: left;">
+        <span style="color: #22c55e; font-family: var(--font-mono); font-size: 0.78rem; font-weight: 800; display: block; margin-bottom: 6px;">⚡ WANT AN INSTANT REPLY?</span>
+        <p style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.5; margin-bottom: 14px;">
+          You can also forward these exact project details to Vinayak's direct WhatsApp right now:
+        </p>
+        <a id="forwardWhatsAppBtn" href="#" target="_blank" class="btn-primary" style="background: #22c55e; width: 100%; justify-content: center; box-shadow: 0 0 20px rgba(34, 197, 94, 0.4); font-size: 0.95rem;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#ffffff" style="flex-shrink: 0;"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm5.77 14.07c-.24.67-1.39 1.29-1.92 1.37-.5.08-1.15.11-3.32-.78-2.61-1.07-4.29-3.73-4.42-3.9-.13-.18-1.06-1.41-1.06-2.69s.67-1.91.91-2.17c.24-.26.52-.33.7-.33.17 0 .35 0 .5.01.16.01.37-.06.58.44.22.52.74 1.82.81 1.95.07.13.11.28.02.45-.09.17-.14.28-.27.43-.14.16-.29.35-.41.47-.14.14-.28.29-.12.57.16.27.7 1.15 1.5 1.86 1.03.92 1.9 1.21 2.17 1.34.27.14.43.12.59-.07.16-.18.69-.81.88-1.08.18-.27.37-.23.62-.13.25.09 1.58.74 1.85.88.27.13.45.2.52.31.06.11.06.66-.18 1.33z"/></svg>
+          Chat on WhatsApp Now
+        </a>
+      </div>
+
+      <button onclick="closeSuccessModal()" class="btn-secondary" style="width: 100%; justify-content: center;">
+        Close Window
+      </button>
+    </div>
+  </div>
+
   <!-- TOAST CONTAINER -->
   <div class="toast-container">
     <div id="contactToast" class="toast">
       <i data-lucide="check-circle" style="color: var(--accent-cyan);"></i>
-      <span id="contactToastMsg">Message sent successfully!</span>
+      <span id="contactToastMsg">Sending your inquiry...</span>
     </div>
   </div>
 
@@ -175,14 +204,64 @@
   <script src="script.js"></script>
   <script>
     lucide.createIcons();
-    function handleContactSubmit(e) {
+
+    function closeSuccessModal() {
+      document.getElementById('successInquiryModal').classList.remove('active');
+    }
+
+    async function handleContactSubmit(e) {
       e.preventDefault();
+      const submitBtn = e.target.querySelector('button[type="submit"]');
+      const origText = submitBtn.innerHTML;
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = 'Sending to Gmail... <i data-lucide="loader-2" class="spin"></i>';
+      if (window.lucide) lucide.createIcons();
+
       const name = document.getElementById('cName').value;
-      const toast = document.getElementById('contactToast');
-      const toastMsg = document.getElementById('contactToastMsg');
-      toastMsg.innerText = `Thank you ${name}! Your inquiry has been received.`;
-      toast.classList.add('show');
-      setTimeout(() => { toast.classList.remove('show'); }, 4500);
+      const email = document.getElementById('cEmail').value;
+      const service = document.getElementById('cService').value;
+      const timeline = document.getElementById('cTimeline').value || 'Flexible';
+      const message = document.getElementById('cMessage').value;
+
+      // 1. Dual Delivery: Send to Gmail (mail2vinayakvallabhrai@gmail.com) via FormSubmit
+      try {
+        await fetch('https://formsubmit.co/ajax/mail2vinayakvallabhrai@gmail.com', {
+          method: 'POST',
+          headers: { 
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify({
+            _subject: `New Project Inquiry from ${name} [VisualNexa Portfolio]`,
+            _template: 'table',
+            Name: name,
+            Email: email,
+            Service: service,
+            Timeline: timeline,
+            Message: message
+          })
+        });
+      } catch (err) {
+        console.log('Email delivery background note:', err);
+      }
+
+      // 2. Dual Delivery: Pre-fill WhatsApp message link
+      const waText = encodeURIComponent(
+        `Hi Vinayak! I just sent a project inquiry via your VisualNexa portfolio:\n\n` +
+        `👤 *Name:* ${name}\n` +
+        `✉️ *Email:* ${email}\n` +
+        `🎬 *Service:* ${service}\n` +
+        `⏱️ *Timeline:* ${timeline}\n` +
+        `📝 *Message:* ${message}`
+      );
+      const waUrl = `https://wa.me/916306840513?text=${waText}`;
+      document.getElementById('forwardWhatsAppBtn').href = waUrl;
+
+      // Show Success Modal
+      document.getElementById('successInquiryModal').classList.add('active');
+
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = origText;
       document.getElementById('contactPageForm').reset();
     }
   </script>
