@@ -1,30 +1,94 @@
-/* VINAYAK VALLABH RAI - INTERACTIVE JAVASCRIPT LOGIC */
+/* =========================================================================
+   VINAYAK VALLABH RAI - CINEMATIC PORTFOLIO CORE INTERACTIONS
+   ========================================================================= */
 
 document.addEventListener('DOMContentLoaded', () => {
-  console.log("Portfolio Script initialized for Vinayak Vallabh Rai");
+  console.log("The Editing Machine initialized for Vinayak Vallabh Rai");
 
-  // 1. Navigation Active Link Highlight on Scroll
-  const sections = document.querySelectorAll('section');
-  const navLinks = document.querySelectorAll('.nav-links a');
-
+  /* -------------------------------------------------------------
+     1. NAVIGATION SCROLL CLASS
+  ------------------------------------------------------------- */
+  const navbar = document.querySelector('.navbar');
   window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop - 150;
-      if (window.scrollY >= sectionTop) {
-        current = section.getAttribute('id');
+    if (navbar) {
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
       }
-    });
-
-    navLinks.forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href') === `#${current}`) {
-        link.classList.add('active');
-      }
-    });
+    }
   });
 
-  // 2. Video Modal Player Setup
+  /* -------------------------------------------------------------
+     2. CUSTOM CINEMATIC SHOWREEL PLAYER
+  ------------------------------------------------------------- */
+  const showreelOverlay = document.getElementById('showreelOverlay');
+  const btnShowreelPlay = document.getElementById('btnShowreelPlay');
+  const btnCtrlPlay = document.getElementById('btnCtrlPlay');
+  const scrubFill = document.getElementById('playerScrubFill');
+  const timeReadout = document.getElementById('playerTimeReadout');
+  const btnFullscreen = document.getElementById('btnFullscreen');
+  const showreelWrapper = document.getElementById('showreelWrapper');
+
+  let isPlaying = false;
+  let playInterval = null;
+  let currentSeconds = 0;
+  const totalSeconds = 165; // 02:45 total duration
+
+  function formatTime(s) {
+    const mins = String(Math.floor(s / 60)).padStart(2, '0');
+    const secs = String(Math.floor(s % 60)).padStart(2, '0');
+    return `${mins}:${secs}`;
+  }
+
+  function toggleShowreelPlay() {
+    isPlaying = !isPlaying;
+
+    if (isPlaying) {
+      if (showreelOverlay) showreelOverlay.style.display = 'none';
+      if (btnCtrlPlay) btnCtrlPlay.innerHTML = '<i data-lucide="pause"></i>';
+      lucide.createIcons();
+
+      playInterval = setInterval(() => {
+        currentSeconds++;
+        if (currentSeconds > totalSeconds) {
+          currentSeconds = 0;
+          toggleShowreelPlay();
+        }
+        const pct = (currentSeconds / totalSeconds) * 100;
+        if (scrubFill) scrubFill.style.width = `${pct}%`;
+        if (timeReadout) timeReadout.textContent = `${formatTime(currentSeconds)} / ${formatTime(totalSeconds)}`;
+      }, 1000);
+
+      // Trigger video modal for full preview if clicked main play button
+      openVideoModal('trailer');
+    } else {
+      clearInterval(playInterval);
+      if (btnCtrlPlay) btnCtrlPlay.innerHTML = '<i data-lucide="play"></i>';
+      lucide.createIcons();
+    }
+  }
+
+  if (showreelOverlay) {
+    showreelOverlay.addEventListener('click', toggleShowreelPlay);
+  }
+  if (btnCtrlPlay) {
+    btnCtrlPlay.addEventListener('click', toggleShowreelPlay);
+  }
+
+  if (btnFullscreen && showreelWrapper) {
+    btnFullscreen.addEventListener('click', () => {
+      if (!document.fullscreenElement) {
+        showreelWrapper.requestFullscreen().catch(err => console.log(err));
+      } else {
+        document.exitFullscreen();
+      }
+    });
+  }
+
+  /* -------------------------------------------------------------
+     3. VIDEO MODAL PLAYER SETUP
+  ------------------------------------------------------------- */
   const videoModal = document.getElementById('videoModal');
   const modalClose = document.getElementById('modalClose');
   const modalVideoTitle = document.getElementById('modalVideoTitle');
@@ -32,23 +96,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const videoData = {
     'doc': {
-      title: 'The Prime Documentary - Editing Breakdown',
+      title: 'The Prime Documentary - Editing Breakdown & Color Grade',
       url: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1'
     },
     'watch': {
-      title: 'Product Ads Video - Luxury Watch Commercial',
+      title: 'Product Commercial - Luxury Watch Commercial Edit',
       url: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1'
     },
     'trailer': {
-      title: 'Cinematic Trailer - Visual Effects Showcase',
+      title: 'Cinematic VFX Trailer - Master Showreel Cut',
       url: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1'
     },
     'ai': {
-      title: 'Future is AI - AI UGC Video Creation',
+      title: 'Future of AI - AI UGC Video Production',
       url: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1'
     },
     'yt1': {
-      title: 'The Dark Reality of AI - Documentary',
+      title: 'The Dark Reality of AI - Full Documentary',
       url: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1'
     },
     'yt2': {
@@ -56,13 +120,16 @@ document.addEventListener('DOMContentLoaded', () => {
       url: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1'
     },
     'yt3': {
-      title: 'Documentary Making Process - Behind The Scenes',
+      title: 'Documentary Making Process - Behind The Scenes Breakdown',
       url: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1'
     }
   };
 
   window.openVideoModal = function(key) {
-    const data = videoData[key] || { title: 'Project Preview Video', url: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1' };
+    const data = videoData[key] || {
+      title: 'Project Showcase Video',
+      url: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1'
+    };
     if (modalVideoTitle) modalVideoTitle.textContent = data.title;
     if (modalVideoFrame) modalVideoFrame.src = data.url;
     if (videoModal) videoModal.classList.add('active');
@@ -77,7 +144,9 @@ document.addEventListener('DOMContentLoaded', () => {
     modalClose.addEventListener('click', closeVideoModal);
   }
 
-  // 3. Contact Form Modal
+  /* -------------------------------------------------------------
+     4. CONTACT FORM MODAL
+  ------------------------------------------------------------- */
   const contactModal = document.getElementById('contactModal');
   const contactClose = document.getElementById('contactClose');
   const contactForm = document.getElementById('contactForm');
@@ -98,16 +167,18 @@ document.addEventListener('DOMContentLoaded', () => {
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
       closeContactModal();
-      showToast("Message Sent Successfully! Vinayak will contact you soon.");
+      showToast("Message Sent! Vinayak will connect with you within 24 hours.");
       contactForm.reset();
     });
   }
 
-  // 4. Resume Automatic Download Handler
+  /* -------------------------------------------------------------
+     5. RESUME DOWNLOAD HANDLER
+  ------------------------------------------------------------- */
   window.downloadResume = function(e) {
     if (e && e.preventDefault) e.preventDefault();
     showToast("Downloading Vinayak Vallabh Rai's Resume...");
-    
+
     const link = document.createElement('a');
     link.href = 'assets/Vinayak_Vallabh_Rai_Resume.jpg';
     link.download = 'Vinayak_Vallabh_Rai_Resume.jpg';
@@ -116,7 +187,9 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.removeChild(link);
   };
 
-  // 5. Toast Notification System
+  /* -------------------------------------------------------------
+     6. TOAST NOTIFICATION SYSTEM
+  ------------------------------------------------------------- */
   window.showToast = function(message) {
     const toast = document.getElementById('toastNotification');
     const toastMessage = document.getElementById('toastMessage');
