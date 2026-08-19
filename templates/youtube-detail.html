@@ -7,34 +7,35 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  <link rel="stylesheet" href="styles.css">
   <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 <body>
 
   <!-- HEADER -->
   <header class="navbar">
     <div class="container">
-      <a href="{{ url_for('home') }}" class="logo">
+      <a href="index.html" class="logo">
         <span class="logo-badge">VR</span>
       </a>
       <nav>
         <ul class="nav-links">
-          <li><a href="{{ url_for('home') }}">HOME</a></li>
-          <li><a href="{{ url_for('about') }}">ABOUT</a></li>
-          <li><a href="{{ url_for('skills') }}">SKILLS</a></li>
-          <li><a href="{{ url_for('projects') }}">WORK</a></li>
-          <li><a href="{{ url_for('youtube') }}" class="active">YOUTUBE</a></li>
-          <li><a href="{{ url_for('contact') }}">CONTACT</a></li>
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="about-me-detail.html">ABOUT</a></li>
+          <li><a href="skills-detail.html">SKILLS</a></li>
+          <li><a href="project-detail.html">WORK</a></li>
+          <li><a href="youtube-detail.html" class="active">YOUTUBE</a></li>
+          <li><a href="contact.html">CONTACT</a></li>
         </ul>
       </nav>
-      <a href="{{ url_for('contact') }}" class="btn-work-together">Let's Work Together</a>
+      <button onclick="location.href='contact.html'" class="btn-work-together">Let's Work Together</button>
     </div>
   </header>
 
   <div class="container" style="padding-top: 140px; padding-bottom: 60px;">
     
-    <a href="{{ url_for('home') }}" style="color: var(--accent-lime); text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px;">
+    <a href="index.html#youtube" style="color: var(--accent-lime); text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px;">
       <i data-lucide="arrow-left"></i> Back to Home
     </a>
 
@@ -96,7 +97,7 @@
       <!-- Video 1 -->
       <div class="work-card" onclick="openVideoModal('yt1')">
         <div class="work-thumb">
-          <img src="{{ url_for('static', filename='images/yt_thumb_1.jpg') }}" alt="The Dark Reality of AI">
+          <img src="assets/images/yt_thumb_1.jpg" alt="The Dark Reality of AI">
           <div class="play-overlay"><div class="play-btn"><i data-lucide="play"></i></div></div>
         </div>
         <div class="work-info">
@@ -108,7 +109,7 @@
       <!-- Video 2 -->
       <div class="work-card" onclick="openVideoModal('yt2')">
         <div class="work-thumb">
-          <img src="{{ url_for('static', filename='images/yt_thumb_2.jpg') }}" alt="India in 2030 - A Vision">
+          <img src="assets/images/yt_thumb_2.jpg" alt="India in 2030 - A Vision">
           <div class="play-overlay"><div class="play-btn"><i data-lucide="play"></i></div></div>
         </div>
         <div class="work-info">
@@ -120,7 +121,7 @@
       <!-- Video 3 -->
       <div class="work-card" onclick="openVideoModal('yt3')">
         <div class="work-thumb">
-          <img src="{{ url_for('static', filename='images/yt_thumb_3.jpg') }}" alt="Documentary Making Process">
+          <img src="assets/images/yt_thumb_3.jpg" alt="Documentary Making Process">
           <div class="play-overlay"><div class="play-btn"><i data-lucide="play"></i></div></div>
         </div>
         <div class="work-info">
@@ -138,8 +139,8 @@
     <div class="modal-container">
       <button id="modalClose" class="modal-close"><i data-lucide="x"></i></button>
       <h3 id="modalVideoTitle" style="font-family: var(--font-heading); font-size: 1.3rem; font-weight: 800; margin-bottom: 16px;">Video Player</h3>
-      <div class="video-iframe-wrapper">
-        <iframe id="modalIframe" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <div style="position: relative; padding-top: 56.25%; width: 100%; border-radius: 12px; overflow: hidden; background: #000;">
+        <iframe id="modalVideoFrame" style="position: absolute; top:0; left:0; width:100%; height:100%; border:none;" allow="autoplay; encrypted-media" allowfullscreen></iframe>
       </div>
     </div>
   </div>
@@ -148,7 +149,8 @@
     <p>© 2026 Vinayak Vallabh Rai. Creator of The Prime Doc.</p>
   </footer>
 
-  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  <script src="static/js/three-canvas.js"></script>
+  <script src="script.js"></script>
   <script>lucide.createIcons();</script>
 </body>
 </html>

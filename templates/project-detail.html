@@ -7,8 +7,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  <link rel="stylesheet" href="styles.css">
   <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <style>
     .detail-hero { padding-top: 140px; padding-bottom: 40px; }
     .project-detail-card {
@@ -59,20 +60,20 @@
   <!-- HEADER -->
   <header class="navbar">
     <div class="container">
-      <a href="{{ url_for('home') }}" class="logo">
+      <a href="index.html" class="logo">
         <span class="logo-badge">VR</span>
       </a>
       <nav>
         <ul class="nav-links">
-          <li><a href="{{ url_for('home') }}">HOME</a></li>
-          <li><a href="{{ url_for('about') }}">ABOUT</a></li>
-          <li><a href="{{ url_for('skills') }}">SKILLS</a></li>
-          <li><a href="{{ url_for('projects') }}" class="active">WORK</a></li>
-          <li><a href="{{ url_for('youtube') }}">YOUTUBE</a></li>
-          <li><a href="{{ url_for('contact') }}">CONTACT</a></li>
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="about-me-detail.html">ABOUT</a></li>
+          <li><a href="skills-detail.html">SKILLS</a></li>
+          <li><a href="project-detail.html" class="active">WORK</a></li>
+          <li><a href="youtube-detail.html">YOUTUBE</a></li>
+          <li><a href="contact.html">CONTACT</a></li>
         </ul>
       </nav>
-      <a href="{{ url_for('contact') }}" class="btn-work-together">Let's Work Together</a>
+      <button onclick="location.href='contact.html'" class="btn-work-together">Let's Work Together</button>
     </div>
   </header>
 
@@ -103,7 +104,7 @@
       </div>
 
       <div style="position: relative; width: 100%; padding-top: 45%; border-radius: 16px; overflow: hidden; margin-bottom: 24px;">
-        <img src="{{ url_for('static', filename='images/proj_doc.jpg') }}" alt="Documentary Edit" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit: cover;">
+        <img src="assets/images/proj_doc.jpg" alt="Documentary Edit" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit: cover;">
       </div>
 
       <div class="specs-grid">
@@ -151,7 +152,7 @@
       </div>
 
       <div style="position: relative; width: 100%; padding-top: 45%; border-radius: 16px; overflow: hidden; margin-bottom: 24px;">
-        <img src="{{ url_for('static', filename='images/proj_watch.jpg') }}" alt="Product Ads Video" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit: cover;">
+        <img src="assets/images/proj_watch.jpg" alt="Product Ads Video" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit: cover;">
       </div>
 
       <div class="specs-grid">
@@ -192,7 +193,7 @@
       </div>
 
       <div style="position: relative; width: 100%; padding-top: 45%; border-radius: 16px; overflow: hidden; margin-bottom: 24px;">
-        <img src="{{ url_for('static', filename='images/proj_trailer.jpg') }}" alt="Cinematic Trailer" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit: cover;">
+        <img src="assets/images/proj_trailer.jpg" alt="Cinematic Trailer" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit: cover;">
       </div>
 
       <p style="color: var(--text-muted); line-height: 1.7;">
@@ -213,7 +214,7 @@
       </div>
 
       <div style="position: relative; width: 100%; padding-top: 45%; border-radius: 16px; overflow: hidden; margin-bottom: 24px;">
-        <img src="{{ url_for('static', filename='images/proj_ai.jpg') }}" alt="AI UGC Video" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit: cover;">
+        <img src="assets/images/proj_ai.jpg" alt="AI UGC Video" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit: cover;">
       </div>
 
       <p style="color: var(--text-muted); line-height: 1.7;">
@@ -238,7 +239,8 @@
     <p>© 2026 Vinayak Vallabh Rai. Mohali, Punjab, India.</p>
   </footer>
 
-  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  <script src="static/js/three-canvas.js"></script>
+  <script src="script.js"></script>
   <script>lucide.createIcons();</script>
 </body>
 </html>

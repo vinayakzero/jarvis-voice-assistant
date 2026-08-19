@@ -1204,3 +1204,138 @@ a {
   transform: translateY(0);
   opacity: 1;
 }
+
+/* =============================================================
+   3D WEBGL & FUTURISTIC 3D STYLING SYSTEM
+   ============================================================= */
+
+/* Fixed 3D WebGL Canvas Backdrop */
+#webgl-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Hero Section 3D Object Canvas Target */
+#hero-3d-target {
+  position: absolute;
+  top: -30px;
+  right: -40px;
+  width: 320px;
+  height: 320px;
+  z-index: 5;
+  pointer-events: auto;
+  cursor: pointer;
+  filter: drop-shadow(0 0 35px rgba(168, 85, 247, 0.5));
+  transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+#hero-3d-target:hover {
+  transform: scale(1.08);
+}
+
+@media (max-width: 992px) {
+  #hero-3d-target {
+    position: relative;
+    top: 0;
+    right: 0;
+    margin: 0 auto 20px auto;
+    width: 260px;
+    height: 260px;
+  }
+}
+
+/* 3D Perspective Containers */
+.hero, .section-padding, .hero-grid, .skills-grid, .projects-grid, .about-edu-grid {
+  perspective: 1000px;
+}
+
+/* 3D Card Tilt Base Styles */
+.project-card, .skill-card, .info-box, .photo-wrapper, .info-card-floating, .stat-card {
+  transform-style: preserve-3d;
+  will-change: transform;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), 0 0 20px rgba(168, 85, 247, 0.08);
+}
+
+.project-card:hover, .skill-card:hover, .info-box:hover {
+  border-color: rgba(190, 242, 100, 0.45) !important;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6), 0 0 35px rgba(190, 242, 100, 0.25) !important;
+}
+
+/* Specular Glare Overlay */
+.tilt-glare {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  border-radius: inherit;
+  opacity: 0;
+  z-index: 10;
+  mix-blend-mode: overlay;
+}
+
+/* Floating 3D Badges Enhancement */
+.floating-badge {
+  transform-style: preserve-3d;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), 0 0 15px rgba(168, 85, 247, 0.3) !important;
+  transition: transform 0.2s ease-out, box-shadow 0.3s ease;
+}
+
+.floating-badge:hover {
+  box-shadow: 0 15px 35px rgba(190, 242, 100, 0.5), 0 0 25px rgba(190, 242, 100, 0.6) !important;
+}
+
+/* Cyber Cursor Follower */
+.cyber-cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  margin-top: -4px;
+  margin-left: -4px;
+  background-color: var(--accent-lime);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  box-shadow: 0 0 12px var(--accent-lime);
+  transition: width 0.2s, height 0.2s, background-color 0.2s;
+}
+
+.cyber-cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 38px;
+  height: 38px;
+  margin-top: -19px;
+  margin-left: -19px;
+  border: 1.5px solid rgba(168, 85, 247, 0.6);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.3);
+  transition: width 0.25s ease, height 0.25s ease, border-color 0.25s ease, margin 0.25s ease;
+}
+
+.cyber-cursor-ring.hovering {
+  width: 54px;
+  height: 54px;
+  margin-top: -27px;
+  margin-left: -27px;
+  border-color: var(--accent-lime);
+  background: rgba(190, 242, 100, 0.08);
+  box-shadow: 0 0 25px rgba(190, 242, 100, 0.5);
+}
+

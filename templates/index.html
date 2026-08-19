@@ -11,33 +11,34 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  <link rel="stylesheet" href="styles.css">
   
   <!-- Feather / Lucide Icons SVG Script -->
   <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Three.js 3D WebGL Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 <body>
 
   <!-- HEADER & NAVIGATION -->
   <header class="navbar">
     <div class="container">
-      <a href="{{ url_for('home') }}" class="logo">
+      <a href="index.html" class="logo">
         <span class="logo-badge">VR</span>
       </a>
       
       <nav>
         <ul class="nav-links">
-          <li><a href="{{ url_for('home') }}" class="active">HOME</a></li>
-          <li><a href="{{ url_for('about') }}">ABOUT</a></li>
-          <li><a href="{{ url_for('skills') }}">SKILLS</a></li>
-          <li><a href="{{ url_for('projects') }}">WORK</a></li>
-          <li><a href="{{ url_for('youtube') }}">YOUTUBE</a></li>
-          <li><a href="{{ url_for('contact') }}">CONTACT</a></li>
+          <li><a href="index.html" class="active">HOME</a></li>
+          <li><a href="about-me-detail.html">ABOUT</a></li>
+          <li><a href="skills-detail.html">SKILLS</a></li>
+          <li><a href="project-detail.html">WORK</a></li>
+          <li><a href="youtube-detail.html">YOUTUBE</a></li>
+          <li><a href="contact.html">CONTACT</a></li>
         </ul>
       </nav>
       
-      <a href="{{ url_for('contact') }}" class="btn-work-together">Let's Work Together</a>
+      <a href="contact.html" class="btn-work-together">Let's Work Together</a>
     </div>
   </header>
 
@@ -62,13 +63,14 @@
           </p>
           
           <div class="hero-actions">
-          <a href="{{ url_for('projects') }}" class="btn btn-primary">
-            View My Work <i data-lucide="arrow-right"></i>
-          </a>
-          <a href="{{ url_for('resume') }}" class="btn btn-secondary">
-            Download Resume <i data-lucide="download"></i>
-          </a>
-        </div>
+            <a href="project-detail.html" class="btn-primary">
+              View My Work <i data-lucide="arrow-right"></i>
+            </a>
+            
+            <a href="resume-preview.html" class="btn-secondary">
+              Download Resume <i data-lucide="download"></i>
+            </a>
+          </div>
           
           <div class="social-bar">
             <label>Follow me on</label>
@@ -91,6 +93,9 @@
         
         <!-- Right Column: User Photo & Floating Badges -->
         <div class="hero-visual">
+          
+          <!-- Interactive 3D WebGL Torus Knot Object -->
+          <div id="hero-3d-target" title="Interactive 3D Core"></div>
           
           <!-- Purple Aura Backlight Glow -->
           <div class="hero-purple-aura"></div>
@@ -119,7 +124,7 @@
           
           <!-- Photo Frame (Large & Impactful PNG Cutout) -->
           <div class="photo-wrapper">
-            <img src="{{ url_for('static', filename='images/vinayak_user.png') }}" alt="Vinayak Vallabh Rai - Video Editor & AI Creator">
+            <img src="assets/images/vinayak_user.png" alt="Vinayak Vallabh Rai - Video Editor & AI Creator">
           </div>
           
           <!-- Floating Info Box (DOB & Location) -->
@@ -288,7 +293,7 @@
         <!-- Project 1: Documentary Edit -->
         <div class="work-card" onclick="openVideoModal('doc')">
           <div class="work-thumb">
-            <img src="{{ url_for('static', filename='images/proj_doc.jpg') }}" alt="Documentary Edit">
+            <img src="assets/images/proj_doc.jpg" alt="Documentary Edit">
             <div class="play-overlay">
               <div class="play-btn"><i data-lucide="play"></i></div>
             </div>
@@ -302,7 +307,7 @@
         <!-- Project 2: Product Ads Video -->
         <div class="work-card" onclick="openVideoModal('watch')">
           <div class="work-thumb">
-            <img src="{{ url_for('static', filename='images/proj_watch.jpg') }}" alt="Product Ads Video">
+            <img src="assets/images/proj_watch.jpg" alt="Product Ads Video">
             <div class="play-overlay">
               <div class="play-btn"><i data-lucide="play"></i></div>
             </div>
@@ -316,7 +321,7 @@
         <!-- Project 3: Cinematic Trailer -->
         <div class="work-card" onclick="openVideoModal('trailer')">
           <div class="work-thumb">
-            <img src="{{ url_for('static', filename='images/proj_trailer.jpg') }}" alt="Cinematic Trailer">
+            <img src="assets/images/proj_trailer.jpg" alt="Cinematic Trailer">
             <div class="play-overlay">
               <div class="play-btn"><i data-lucide="play"></i></div>
             </div>
@@ -330,7 +335,7 @@
         <!-- Project 4: AI UGC Video -->
         <div class="work-card" onclick="openVideoModal('ai')">
           <div class="work-thumb">
-            <img src="{{ url_for('static', filename='images/proj_ai.jpg') }}" alt="AI UGC Video">
+            <img src="assets/images/proj_ai.jpg" alt="AI UGC Video">
             <div class="play-overlay">
               <div class="play-btn"><i data-lucide="play"></i></div>
             </div>
@@ -344,7 +349,7 @@
       </div>
       
       <div class="center-btn-wrapper">
-        <a href="{{ url_for('projects') }}" class="btn-primary">
+        <a href="project-detail.html" class="btn-primary">
           View All Projects <i data-lucide="arrow-right"></i>
         </a>
       </div>
@@ -387,7 +392,7 @@
           <!-- YT Video 1 -->
           <div class="yt-video-item" onclick="openVideoModal('yt1')" style="cursor: pointer;">
             <div class="yt-video-thumb">
-              <img src="{{ url_for('static', filename='images/yt_thumb_1.jpg') }}" alt="The Dark Reality of AI">
+              <img src="assets/images/yt_thumb_1.jpg" alt="The Dark Reality of AI">
             </div>
             <div class="yt-video-meta">
               <h5 class="yt-video-title">The Dark Reality of AI</h5>
@@ -398,7 +403,7 @@
           <!-- YT Video 2 -->
           <div class="yt-video-item" onclick="openVideoModal('yt2')" style="cursor: pointer;">
             <div class="yt-video-thumb">
-              <img src="{{ url_for('static', filename='images/yt_thumb_2.jpg') }}" alt="India in 2030 - A Vision">
+              <img src="assets/images/yt_thumb_2.jpg" alt="India in 2030 - A Vision">
             </div>
             <div class="yt-video-meta">
               <h5 class="yt-video-title">India in 2030 – A Vision</h5>
@@ -409,7 +414,7 @@
           <!-- YT Video 3 -->
           <div class="yt-video-item" onclick="openVideoModal('yt3')" style="cursor: pointer;">
             <div class="yt-video-thumb">
-              <img src="{{ url_for('static', filename='images/yt_thumb_3.jpg') }}" alt="Documentary Making Process">
+              <img src="assets/images/yt_thumb_3.jpg" alt="Documentary Making Process">
             </div>
             <div class="yt-video-meta">
               <h5 class="yt-video-title">Documentary Making Process</h5>
@@ -514,9 +519,9 @@
         </div>
         
         <div>
-          <a href="{{ url_for('contact') }}" class="btn-primary">
+          <button onclick="openContactModal()" class="btn-primary">
             Get In Touch <i data-lucide="arrow-right"></i>
-          </a>
+          </button>
         </div>
       </div>
       
@@ -587,6 +592,7 @@
     </div>
   </div>
 
+  <script src="static/js/three-canvas.js"></script>
   <script src="script.js"></script>
   <script>
     lucide.createIcons();

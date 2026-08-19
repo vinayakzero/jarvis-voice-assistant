@@ -7,8 +7,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  <link rel="stylesheet" href="styles.css">
   <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <style>
     .page-hero { padding-top: 140px; padding-bottom: 60px; }
     .about-card-large {
@@ -41,43 +42,38 @@
 </head>
 <body>
 
-  <!-- HEADER & NAVIGATION -->
+  <!-- HEADER NAVBAR -->
   <header class="navbar">
     <div class="container">
-      <a href="{{ url_for('home') }}" class="logo">
+      <a href="index.html" class="logo">
         <span class="logo-badge">VR</span>
       </a>
-      
       <nav>
         <ul class="nav-links">
-          <li><a href="{{ url_for('home') }}">HOME</a></li>
-          <li><a href="{{ url_for('about') }}" class="active">ABOUT</a></li>
-          <li><a href="{{ url_for('skills') }}">SKILLS</a></li>
-          <li><a href="{{ url_for('projects') }}">WORK</a></li>
-          <li><a href="{{ url_for('youtube') }}">YOUTUBE</a></li>
-          <li><a href="{{ url_for('contact') }}">CONTACT</a></li>
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="about-me-detail.html" class="active">ABOUT</a></li>
+          <li><a href="skills-detail.html">SKILLS</a></li>
+          <li><a href="project-detail.html">WORK</a></li>
+          <li><a href="youtube-detail.html">YOUTUBE</a></li>
+          <li><a href="contact.html">CONTACT</a></li>
         </ul>
       </nav>
-      
-      <a href="{{ url_for('contact') }}" class="btn-work-together">Let's Work Together</a>
+      <button onclick="location.href='contact.html'" class="btn-work-together">Let's Work Together</button>
     </div>
   </header>
 
-  <!-- MAIN ABOUT CONTENT -->
-  <main class="section-padding" style="padding-top: 120px;">
-    <div class="container">
+  <div class="container page-hero">
+    
+    <a href="index.html" style="color: var(--accent-lime); text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px;">
+      <i data-lucide="arrow-left"></i> Back to Homepage
+    </a>
+
+    <div style="display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 40px; align-items: center; margin-bottom: 48px;">
       
-      <!-- Back Button -->
-      <a href="{{ url_for('home') }}" class="btn-secondary" style="display: inline-flex; align-items: center; gap: 8px; margin-bottom: 30px;">
-        <i data-lucide="arrow-left"></i> Back to Homepage
-      </a>
-      
-      <div style="display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 40px; align-items: center; margin-bottom: 48px;">
-        
-        <!-- Studio Photo -->
-        <div style="border-radius: 24px; overflow: hidden; border: 1px solid var(--bg-card-border); box-shadow: 0 20px 50px rgba(0,0,0,0.6);">
-          <img src="{{ url_for('static', filename='images/vinayak_studio.jpg') }}" alt="Vinayak Vallabh Rai Studio Setup" style="width: 100%; height: auto; display: block; object-fit: cover;">
-        </div>
+      <!-- Studio Photo -->
+      <div style="border-radius: 24px; overflow: hidden; border: 1px solid var(--bg-card-border); box-shadow: 0 20px 50px rgba(0,0,0,0.6);">
+        <img src="assets/images/vinayak_studio.jpg" alt="Vinayak Vallabh Rai Studio Setup" style="width: 100%; height: auto; display: block; object-fit: cover;">
+      </div>
 
       <!-- Main Overview -->
       <div>
@@ -169,7 +165,8 @@
     <p>© 2026 Vinayak Vallabh Rai. Mohali, Punjab, India.</p>
   </footer>
 
-  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  <script src="static/js/three-canvas.js"></script>
+  <script src="script.js"></script>
   <script>lucide.createIcons();</script>
 </body>
 </html>

@@ -42,10 +42,16 @@ def contact():
 def resume():
     return render_template('resume-preview.html', active_page='resume')
 
-# Explicit static file handler for Vercel Serverless Python
+# Explicit static file handler for Vercel Serverless Python & root static assets
 @app.route('/static/<path:filename>')
 def serve_static(filename):
     return send_from_directory('static', filename)
+
+@app.route('/<path:filename>')
+def serve_root_files(filename):
+    if os.path.exists(filename):
+        return send_from_directory('.', filename)
+    return "File not found", 404
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))

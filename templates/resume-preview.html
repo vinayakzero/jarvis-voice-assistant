@@ -7,8 +7,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  <link rel="stylesheet" href="styles.css">
   <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <style>
     .resume-container {
       max-width: 1000px;
@@ -51,18 +52,18 @@
         <h1 style="font-family: var(--font-heading); font-size: 2.2rem; font-weight: 900;">OFFICIAL RESUME</h1>
         <p style="color: var(--text-muted); font-size: 0.95rem;">Vinayak Vallabh Rai • Video Editor | AI Content Creator | Motion Graphics</p>
       </div>
-      <a href="{{ url_for('static', filename='images/Vinayak_Vallabh_Rai_Resume.jpg') }}" download="Vinayak_Vallabh_Rai_Resume.jpg" class="btn-primary" onclick="showToast('Downloading High-Res Resume...')">
+      <a href="assets/Vinayak_Vallabh_Rai_Resume.jpg" download="Vinayak_Vallabh_Rai_Resume.jpg" class="btn-primary" onclick="showToast('Downloading High-Res Resume...')">
         Click To Download Resume <i data-lucide="download"></i>
       </a>
     </div>
 
     <!-- Ultra High Resolution Official Resume Document Display -->
     <div class="resume-frame">
-      <img src="{{ url_for('static', filename='images/Vinayak_Vallabh_Rai_Resume.jpg') }}" alt="Vinayak Vallabh Rai Resume Document" id="resumeImage">
+      <img src="assets/Vinayak_Vallabh_Rai_Resume.jpg" alt="Vinayak Vallabh Rai Ultra High-Res Resume">
     </div>
 
     <div style="display: flex; justify-content: center; margin-top: 32px;">
-      <a href="{{ url_for('static', filename='images/Vinayak_Vallabh_Rai_Resume.jpg') }}" download="Vinayak_Vallabh_Rai_Resume.jpg" class="btn-primary" style="padding: 16px 36px; font-size: 1rem;" onclick="showToast('Downloading High-Res Resume...')">
+      <a href="assets/Vinayak_Vallabh_Rai_Resume.jpg" download="Vinayak_Vallabh_Rai_Resume.jpg" class="btn-primary" style="padding: 16px 36px; font-size: 1rem;" onclick="showToast('Downloading High-Res Resume...')">
         Click To Download High-Res Resume File <i data-lucide="download"></i>
       </a>
     </div>
@@ -76,6 +77,7 @@
     </div>
   </div>
 
+  <script src="static/js/three-canvas.js"></script>
   <script src="script.js"></script>
   <script>lucide.createIcons();</script>
 </body>
