@@ -87,57 +87,123 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* -------------------------------------------------------------
-     3. VIDEO MODAL PLAYER SETUP
+     3. VIDEO MODAL PLAYER SETUP (MP4 & YouTube Hybrid)
   ------------------------------------------------------------- */
   const videoModal = document.getElementById('videoModal');
   const modalClose = document.getElementById('modalClose');
   const modalVideoTitle = document.getElementById('modalVideoTitle');
   const modalVideoFrame = document.getElementById('modalVideoFrame');
+  const modalHtml5Video = document.getElementById('modalHtml5Video');
 
   const videoData = {
     'doc': {
-      title: 'The Prime Documentary - Editing Breakdown & Color Grade',
-      url: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1'
+      title: 'The Prime Documentary - एक नाम जिससे पूरा बिहार का सिस्टम कांप उठा - ब्रह्मेश्वर मुखिया! | The Prime Doc',
+      type: 'youtube',
+      url: 'https://www.youtube.com/embed/n7q2PGTjLJk?autoplay=1'
+    },
+    'saas': {
+      title: 'B2B SaaS Product Demo & UI Motion Design Edit',
+      type: 'mp4',
+      url: 'assets/videos/Basic composition.mp4'
+    },
+    'bmw': {
+      title: 'BMW M4 Underground Landscape - AI Cinematic Video & VFX',
+      type: 'mp4',
+      url: 'assets/videos/BMW M4 underground landscape.mp4'
+    },
+    'ugc_canada': {
+      title: 'Canada Client UGC Viral Ad Campaign (Yellow Gas Station 9:16)',
+      type: 'mp4',
+      url: 'assets/videos/yellow gas station .mp4'
+    },
+    'brahmeshwar': {
+      title: 'एक नाम जिससे पूरा बिहार का सिस्टम कांप उठा - ब्रह्मेश्वर मुखिया! | 2D Animation | The Prime Doc',
+      type: 'youtube',
+      url: 'https://www.youtube.com/embed/n7q2PGTjLJk?autoplay=1'
+    },
+    'muhnochwa': {
+      title: 'मुँहनोचवा: 2002 का वो रहस्यमयी साया जिसने पूरे उत्तर प्रदेश को दहला दिया | The Prime Doc',
+      type: 'youtube',
+      url: 'https://www.youtube.com/embed/EJCvdtasEKY?autoplay=1'
+    },
+    'bharat': {
+      title: 'क्या सच बोलने की सजा मौत है? भरत तिवारी की दर्दनाक कहानी | 2D Animation | The Prime Doc',
+      type: 'youtube',
+      url: 'https://www.youtube.com/embed/5SQomrgnVao?autoplay=1'
+    },
+    'sukesh': {
+      title: 'एक नाम जिससे पूरा बिहार का सिस्टम कांप उठा - ब्रह्मेश्वर मुखिया! | The Prime Doc',
+      type: 'youtube',
+      url: 'https://www.youtube.com/embed/n7q2PGTjLJk?autoplay=1'
+    },
+    'ivf': {
+      title: 'मुँहनोचवा: 2002 का वो रहस्यमयी साया जिसने पूरे उत्तर प्रदेश को दहला दिया | The Prime Doc',
+      type: 'youtube',
+      url: 'https://www.youtube.com/embed/EJCvdtasEKY?autoplay=1'
+    },
+    'rana': {
+      title: 'क्या सच बोलने की सजा मौत है? भरत तिवारी की दर्दनाक कहानी | The Prime Doc',
+      type: 'youtube',
+      url: 'https://www.youtube.com/embed/5SQomrgnVao?autoplay=1'
     },
     'watch': {
-      title: 'Product Commercial - Luxury Watch Commercial Edit',
-      url: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1'
+      title: 'B2B SaaS Product Demo & UI Motion Design Edit',
+      type: 'mp4',
+      url: 'assets/videos/Basic composition.mp4'
     },
     'trailer': {
-      title: 'Cinematic VFX Trailer - Master Showreel Cut',
-      url: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1'
+      title: 'BMW M4 Underground Landscape - AI Cinematic Video & VFX',
+      type: 'mp4',
+      url: 'assets/videos/BMW M4 underground landscape.mp4'
     },
     'ai': {
-      title: 'Future of AI - AI UGC Video Production',
-      url: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1'
-    },
-    'yt1': {
-      title: 'The Dark Reality of AI - Full Documentary',
-      url: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1'
-    },
-    'yt2': {
-      title: 'India in 2030 - A Vision of Tomorrow',
-      url: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1'
-    },
-    'yt3': {
-      title: 'Documentary Making Process - Behind The Scenes Breakdown',
-      url: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1'
+      title: 'Canada Client UGC Viral Ad Campaign (Yellow Gas Station 9:16)',
+      type: 'mp4',
+      url: 'assets/videos/yellow gas station .mp4'
     }
   };
 
   window.openVideoModal = function(key) {
     const data = videoData[key] || {
       title: 'Project Showcase Video',
-      url: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1'
+      type: 'youtube',
+      url: 'https://www.youtube.com/embed/n7q2PGTjLJk?autoplay=1'
     };
+
     if (modalVideoTitle) modalVideoTitle.textContent = data.title;
-    if (modalVideoFrame) modalVideoFrame.src = data.url;
+
+    if (data.type === 'mp4' || data.url.endsWith('.mp4')) {
+      if (modalVideoFrame) {
+        modalVideoFrame.src = '';
+        modalVideoFrame.style.display = 'none';
+      }
+      if (modalHtml5Video) {
+        modalHtml5Video.src = data.url;
+        modalHtml5Video.style.display = 'block';
+        modalHtml5Video.play().catch(e => console.log(e));
+      }
+    } else {
+      if (modalHtml5Video) {
+        modalHtml5Video.pause();
+        modalHtml5Video.src = '';
+        modalHtml5Video.style.display = 'none';
+      }
+      if (modalVideoFrame) {
+        modalVideoFrame.src = data.url;
+        modalVideoFrame.style.display = 'block';
+      }
+    }
+
     if (videoModal) videoModal.classList.add('active');
   };
 
   window.closeVideoModal = function() {
     if (videoModal) videoModal.classList.remove('active');
     if (modalVideoFrame) modalVideoFrame.src = '';
+    if (modalHtml5Video) {
+      modalHtml5Video.pause();
+      modalHtml5Video.src = '';
+    }
   };
 
   if (modalClose) {

@@ -3,13 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Creative Toolkit & Software Breakdown | Vinayak Vallabh Rai</title>
+  <title>Creative Toolkit & Software Breakdown | VisualNexa</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script src="https://unpkg.com/lucide@latest"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <style>
     .detail-hero { padding-top: 140px; padding-bottom: 40px; }
     .skill-detail-box {
@@ -25,7 +24,7 @@
       transition: var(--transition-smooth);
     }
     .skill-detail-box:hover {
-      border-color: rgba(190, 242, 100, 0.3);
+      border-color: rgba(56, 189, 248, 0.3);
       background: var(--bg-card-hover);
     }
     @media(max-width: 600px){ .skill-detail-box { grid-template-columns: 1fr; } }
@@ -33,173 +32,113 @@
 </head>
 <body>
 
-  <!-- HEADER -->
+  <!-- FIXED HEADER & NAVIGATION -->
   <header class="navbar">
     <div class="container">
       <a href="index.html" class="logo">
-        <span class="logo-badge">VR</span>
+        <img src="assets/images/visualnexa_logo.png" alt="VisualNexa" class="logo-img">
+        <div class="logo-meta">
+          <span class="logo-title">VISUALNEXA</span>
+          <span class="logo-sub">VINAYAK VALLABH RAI • VIDEO EDITOR</span>
+        </div>
       </a>
+      
       <nav>
         <ul class="nav-links">
-          <li><a href="index.html">HOME</a></li>
-          <li><a href="about-me-detail.html">ABOUT</a></li>
-          <li><a href="skills-detail.html" class="active">SKILLS</a></li>
-          <li><a href="project-detail.html">WORK</a></li>
-          <li><a href="youtube-detail.html">YOUTUBE</a></li>
+          <li><a href="index.html">STUDIO</a></li>
+          <li><a href="showreel.html">SHOWREEL</a></li>
+          <li><a href="work.html">WORK</a></li>
+          <li><a href="toolkit.html" class="active">TOOLKIT</a></li>
+          <li><a href="services.html">SERVICES</a></li>
+          <li><a href="youtube.html">YOUTUBE</a></li>
           <li><a href="contact.html">CONTACT</a></li>
         </ul>
       </nav>
-      <button onclick="location.href='contact.html'" class="btn-work-together">Let's Work Together</button>
+      
+      <a href="contact.html" class="btn-work-together">Let's Create</a>
     </div>
   </header>
 
   <div class="container detail-hero">
     
-    <a href="index.html#skills" style="color: var(--accent-lime); text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px;">
-      <i data-lucide="arrow-left"></i> Back to Homepage
+    <a href="toolkit.html" style="color: var(--accent-cyan); text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px; font-family: var(--font-mono); font-size: 0.9rem;">
+      <i data-lucide="arrow-left"></i> View Full Toolkit Page
     </a>
 
-    <span class="section-tag">MY CREATIVE TOOLKIT</span>
-    <h1 style="font-family: var(--font-heading); font-size: 2.8rem; font-weight: 900; margin-bottom: 12px;">
-      SOFTWARE <span class="text-gradient">& SKILLS MASTERY</span>
+    <span class="section-tag">COMPREHENSIVE SKILLS BREAKDOWN</span>
+    <h1 style="font-family: var(--font-heading); font-size: 2.8rem; font-weight: 900; margin-bottom: 16px;">
+      TECHNICAL & CREATIVE <span class="text-gradient">CAPABILITIES</span>
     </h1>
-    <p style="color: var(--text-muted); font-size: 1.05rem; max-width: 720px; margin-bottom: 40px;">
-      Comprehensive overview of tools, editing suites, vector graphic software, color grading suites, and AI engines used by Vinayak Vallabh Rai.
+    <p style="color: var(--text-muted); font-size: 1.05rem; max-width: 700px; line-height: 1.7; margin-bottom: 48px;">
+      An in-depth look at my creative post-production workflow, editing frameworks, and industry-standard creative software stack.
     </p>
 
-    <!-- 01 Adobe Photoshop -->
-    <div class="skill-detail-box" id="ps">
-      <div class="skill-badge-icon sk-ps" style="width: 70px; height: 70px; font-size: 1.6rem;">Ps</div>
+    <!-- 01 EDITING & PACING -->
+    <div class="skill-detail-box">
+      <div class="box-icon" style="width: 70px; height: 70px; border-radius: 16px; background: rgba(56, 189, 248, 0.12); color: var(--accent-cyan); display:flex; align-items:center; justify-content:center;">
+        <i data-lucide="scissors" style="width: 32px; height: 32px;"></i>
+      </div>
       <div>
-        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
-          <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 800;">01. Adobe Photoshop</h3>
-          <span style="color: var(--accent-lime); font-size: 0.85rem; font-weight: 700;">PRO LEVEL</span>
-        </div>
-        <p style="color: var(--text-muted); line-height: 1.6;">
-          Used for thumbnail design, high-converting YouTube banner graphics, visual poster compositing, photo manipulation, background removal, texture generation, and visual assets preparation.
+        <h2 style="font-family: var(--font-heading); font-size: 1.6rem; font-weight: 800; margin-bottom: 10px;">
+          01. Video Editing & Narrative Pacing
+        </h2>
+        <p style="color: var(--text-muted); line-height: 1.7; font-size: 0.95rem; margin-bottom: 16px;">
+          Expert at constructing story arcs that maximize audience watch-time. Utilizing pancake timeline structures in Premiere Pro, J & L cut audio transitions, speed ramps, and multi-cam syncs to produce polished commercial, social, and documentary videos.
         </p>
+        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+          <span style="background: rgba(255,255,255,0.05); padding: 4px 12px; border-radius: 6px; font-size: 0.8rem; color: var(--accent-cyan); font-family: var(--font-mono);">Adobe Premiere Pro</span>
+          <span style="background: rgba(255,255,255,0.05); padding: 4px 12px; border-radius: 6px; font-size: 0.8rem; color: var(--accent-cyan); font-family: var(--font-mono);">CapCut Pro</span>
+          <span style="background: rgba(255,255,255,0.05); padding: 4px 12px; border-radius: 6px; font-size: 0.8rem; color: var(--accent-cyan); font-family: var(--font-mono);">Wondershare Filmora</span>
+        </div>
       </div>
     </div>
 
-    <!-- 02 Adobe Illustrator -->
-    <div class="skill-detail-box" id="ai">
-      <div class="skill-badge-icon sk-ai" style="width: 70px; height: 70px; font-size: 1.6rem;">Ai</div>
+    <!-- 02 COLOR GRADING -->
+    <div class="skill-detail-box">
+      <div class="box-icon" style="width: 70px; height: 70px; border-radius: 16px; background: rgba(168, 85, 247, 0.12); color: #a855f7; display:flex; align-items:center; justify-content:center;">
+        <i data-lucide="aperture" style="width: 32px; height: 32px;"></i>
+      </div>
       <div>
-        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
-          <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 800;">02. Adobe Illustrator</h3>
-          <span style="color: var(--accent-lime); font-size: 0.85rem; font-weight: 700;">PRO LEVEL</span>
-        </div>
-        <p style="color: var(--text-muted); line-height: 1.6;">
-          Vector branding design, scalable logo assets, custom icons, typography design, infographics for documentaries, and illustration elements ready for animation.
+        <h2 style="font-family: var(--font-heading); font-size: 1.6rem; font-weight: 800; margin-bottom: 10px;">
+          02. Color Grading & Look Development
+        </h2>
+        <p style="color: var(--text-muted); line-height: 1.7; font-size: 0.95rem; margin-bottom: 16px;">
+          Transforming flat Log and RAW video into rich, atmospheric visuals. Precision primary exposure balancing, secondary skin tone isolation, RGB parade analysis, and custom 3D LUT look design in DaVinci Resolve.
         </p>
+        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+          <span style="background: rgba(255,255,255,0.05); padding: 4px 12px; border-radius: 6px; font-size: 0.8rem; color: #a855f7; font-family: var(--font-mono);">DaVinci Resolve Studio</span>
+          <span style="background: rgba(255,255,255,0.05); padding: 4px 12px; border-radius: 6px; font-size: 0.8rem; color: #a855f7; font-family: var(--font-mono);">Lumetri Color</span>
+          <span style="background: rgba(255,255,255,0.05); padding: 4px 12px; border-radius: 6px; font-size: 0.8rem; color: #a855f7; font-family: var(--font-mono);">Rec.709 Color Space</span>
+        </div>
       </div>
     </div>
 
-    <!-- 03 Adobe Premiere Pro -->
-    <div class="skill-detail-box" id="pr">
-      <div class="skill-badge-icon sk-pr" style="width: 70px; height: 70px; font-size: 1.6rem;">Pr</div>
-      <div>
-        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
-          <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 800;">03. Adobe Premiere Pro</h3>
-          <span style="color: var(--accent-lime); font-size: 0.85rem; font-weight: 700;">EXPERT LEVEL</span>
-        </div>
-        <p style="color: var(--text-muted); line-height: 1.6;">
-          Primary video editing suite for multi-cam documentary editing, YouTube video assembly, rhythmic pacing, proxy editing, audio track mixing, captioning, and final 4K exporting.
-        </p>
+    <!-- 03 MOTION GRAPHICS & VFX -->
+    <div class="skill-detail-box">
+      <div class="box-icon" style="width: 70px; height: 70px; border-radius: 16px; background: rgba(234, 179, 8, 0.12); color: #eab308; display:flex; align-items:center; justify-content:center;">
+        <i data-lucide="layers" style="width: 32px; height: 32px;"></i>
       </div>
-    </div>
-
-    <!-- 04 Adobe After Effects -->
-    <div class="skill-detail-box" id="ae">
-      <div class="skill-badge-icon sk-ae" style="width: 70px; height: 70px; font-size: 1.6rem;">Ae</div>
       <div>
-        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
-          <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 800;">04. Adobe After Effects</h3>
-          <span style="color: var(--accent-lime); font-size: 0.85rem; font-weight: 700;">EXPERT LEVEL</span>
-        </div>
-        <p style="color: var(--text-muted); line-height: 1.6;">
-          Motion graphics, kinetic typography, 3D visual effects, tracking, lower thirds, seamless transition transitions, HUD elements, particle systems, and visual compositing.
+        <h2 style="font-family: var(--font-heading); font-size: 1.6rem; font-weight: 800; margin-bottom: 10px;">
+          03. Motion Graphics, VFX & Compositing
+        </h2>
+        <p style="color: var(--text-muted); line-height: 1.7; font-size: 0.95rem; margin-bottom: 16px;">
+          Crafting kinetic typography, UI motion design, planar tracking in Mocha, screen replacements, green screen keying, and optical flares in Adobe After Effects.
         </p>
-      </div>
-    </div>
-
-    <!-- 05 AI Video -->
-    <div class="skill-detail-box" id="aivid">
-      <div class="skill-badge-icon sk-aivid" style="width: 70px; height: 70px;"><i data-lucide="video"></i></div>
-      <div>
-        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
-          <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 800;">05. AI Video Generation</h3>
-          <span style="color: var(--accent-lime); font-size: 0.85rem; font-weight: 700;">ADVANCED AI</span>
+        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+          <span style="background: rgba(255,255,255,0.05); padding: 4px 12px; border-radius: 6px; font-size: 0.8rem; color: #eab308; font-family: var(--font-mono);">Adobe After Effects</span>
+          <span style="background: rgba(255,255,255,0.05); padding: 4px 12px; border-radius: 6px; font-size: 0.8rem; color: #eab308; font-family: var(--font-mono);">Mocha Pro Tracking</span>
+          <span style="background: rgba(255,255,255,0.05); padding: 4px 12px; border-radius: 6px; font-size: 0.8rem; color: #eab308; font-family: var(--font-mono);">Photoshop 2D Assets</span>
         </div>
-        <p style="color: var(--text-muted); line-height: 1.6;">
-          Integrating Runway Gen-2, Luma Dream Machine, Midjourney image-to-video prompts, Pika Labs, and Sora concepts for cinematic background imagery and unreal visuals.
-        </p>
-      </div>
-    </div>
-
-    <!-- 06 AI UGC Video -->
-    <div class="skill-detail-box" id="ugc">
-      <div class="skill-badge-icon sk-ugc" style="width: 70px; height: 70px;"><i data-lucide="user-check"></i></div>
-      <div>
-        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
-          <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 800;">06. AI UGC Video Creation</h3>
-          <span style="color: var(--accent-lime); font-size: 0.85rem; font-weight: 700;">VIRAL CONTENT</span>
-        </div>
-        <p style="color: var(--text-muted); line-height: 1.6;">
-          User Generated Content style videos driven by AI avatars, voice synthesis, auto-subtitles, retention-focused pacing, and high conversion e-commerce ad formats.
-        </p>
-      </div>
-    </div>
-
-    <!-- 07 Filmora -->
-    <div class="skill-detail-box" id="filmora">
-      <div class="skill-badge-icon sk-filmora" style="width: 70px; height: 70px;"><i data-lucide="film"></i></div>
-      <div>
-        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
-          <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 800;">07. Wondershare Filmora</h3>
-          <span style="color: var(--accent-lime); font-size: 0.85rem; font-weight: 700;">RAPID EDITING</span>
-        </div>
-        <p style="color: var(--text-muted); line-height: 1.6;">
-          Rapid turn-around video edits, social media short-form reels, template customization, and fast draft storyboarding.
-        </p>
-      </div>
-    </div>
-
-    <!-- 08 DaVinci Resolve -->
-    <div class="skill-detail-box" id="davinci">
-      <div class="skill-badge-icon sk-davinci" style="width: 70px; height: 70px;"><i data-lucide="aperture"></i></div>
-      <div>
-        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
-          <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 800;">08. DaVinci Resolve</h3>
-          <span style="color: var(--accent-lime); font-size: 0.85rem; font-weight: 700;">COLOR GRADE</span>
-        </div>
-        <p style="color: var(--text-muted); line-height: 1.6;">
-          Professional node-based color grading, LUT creation, skin tone correction, shot matching, HDR mastering, and Fairlight audio polish.
-        </p>
-      </div>
-    </div>
-
-    <!-- 09 Using AI Product Ads Video -->
-    <div class="skill-detail-box" id="ads">
-      <div class="skill-badge-icon sk-ads" style="width: 70px; height: 70px;"><i data-lucide="cpu"></i></div>
-      <div>
-        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
-          <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 800;">09. AI Product Ads Video</h3>
-          <span style="color: var(--accent-lime); font-size: 0.85rem; font-weight: 700;">COMMERCIAL AD TECH</span>
-        </div>
-        <p style="color: var(--text-muted); line-height: 1.6;">
-          High end commercial ad creation featuring AI lighting enhancement, automated product rotation, dynamic call-to-action overlays, and target demographic ad optimization.
-        </p>
       </div>
     </div>
 
   </div>
 
   <footer class="footer-bottom container">
-    <p>© 2026 Vinayak Vallabh Rai. Mohali, Punjab, India.</p>
+    <p>© 2026 VisualNexa • Vinayak Vallabh Rai • All Rights Reserved.</p>
   </footer>
 
-  <script src="static/js/three-canvas.js"></script>
   <script src="script.js"></script>
   <script>lucide.createIcons();</script>
 </body>

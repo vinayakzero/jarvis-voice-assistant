@@ -28,26 +28,26 @@
   <header class="navbar">
     <div class="container">
       <a href="index.html" class="logo">
-        <div class="logo-badge">VR</div>
+        <img src="assets/images/visualnexa_logo.png" alt="VisualNexa" class="logo-img">
         <div class="logo-meta">
-          <span class="logo-title">VINAYAK VALLABH RAI</span>
-          <span class="logo-sub">VIDEO EDITOR • STORYTELLER</span>
+          <span class="logo-title">VISUALNEXA</span>
+          <span class="logo-sub">VINAYAK VALLABH RAI • VIDEO EDITOR</span>
         </div>
       </a>
       
       <nav>
         <ul class="nav-links">
-          <li><a href="#studio-stage" class="active">STUDIO</a></li>
-          <li><a href="#showreel">SHOWREEL</a></li>
-          <li><a href="#work">WORK</a></li>
-          <li><a href="#skills">TOOLKIT</a></li>
-          <li><a href="#services">SERVICES</a></li>
-          <li><a href="#youtube">YOUTUBE</a></li>
-          <li><a href="#contact">CONTACT</a></li>
+          <li><a href="index.html" class="active">STUDIO</a></li>
+          <li><a href="showreel.html">SHOWREEL</a></li>
+          <li><a href="work.html">WORK</a></li>
+          <li><a href="toolkit.html">TOOLKIT</a></li>
+          <li><a href="services.html">SERVICES</a></li>
+          <li><a href="youtube.html">YOUTUBE</a></li>
+          <li><a href="contact.html">CONTACT</a></li>
         </ul>
       </nav>
       
-      <a href="javascript:void(0)" onclick="openContactModal()" class="btn-work-together">Let's Create</a>
+      <a href="contact.html" class="btn-work-together">Let's Create</a>
     </div>
   </header>
 
@@ -58,29 +58,6 @@
     
     <!-- 3D Three.js WebGL Viewport -->
     <div id="studio-canvas-container"></div>
-
-    <!-- TOP TIMELINE HUD OVERLAY -->
-    <div class="timeline-hud-bar">
-      <div class="hud-left">
-        <div class="hud-rec-badge">
-          <div class="hud-rec-dot"></div>
-          <span>REC • NLE LIVE</span>
-        </div>
-        <div id="hud-timecode" class="hud-timecode">00:00:00:00</div>
-      </div>
-
-      <div class="hud-timeline-track">
-        <div id="hud-progress-fill" class="hud-progress-fill"></div>
-      </div>
-
-      <div class="hud-milestones">
-        <span>01 RAW</span>
-        <span>02 CUT</span>
-        <span>03 COLOR</span>
-        <span>04 MOTION</span>
-        <span>05 FINAL</span>
-      </div>
-    </div>
 
     <!-- 5-PHASE STORY OVERLAYS (Choreographed via GSAP) -->
     <div class="story-hud-overlay">
@@ -172,14 +149,6 @@
       </div>
     </div>
 
-    <!-- Scroll Mouse Prompt Indicator -->
-    <div class="scroll-indicator-prompt">
-      <div class="scroll-mouse-icon">
-        <div class="scroll-wheel-dot"></div>
-      </div>
-      <span>SCROLL TO EDIT</span>
-    </div>
-
   </div>
 
   <!-- =========================================================================
@@ -235,124 +204,127 @@
       
       <div class="cinematic-projects-list">
         
-        <!-- Project 01: The Prime Documentary -->
+        <!-- Project 01: The Prime Documentary (Brahmeshwar Mukhiya) -->
         <div class="cinematic-project-row">
           <div class="proj-visual-col" onclick="openVideoModal('doc')">
-            <img src="assets/images/proj_doc.jpg" alt="The Prime Documentary">
+            <img src="assets/images/yt_brahmeshwar.jpg" alt="The Prime Documentary - Brahmeshwar Mukhiya" style="width: 100%; height: 100%; object-fit: cover;">
             <div class="proj-play-badge">
               <div class="proj-play-icon"><i data-lucide="play"></i></div>
             </div>
           </div>
           <div class="proj-info-col">
             <div class="proj-meta-header">
-              <span class="proj-tag-badge">DOCUMENTARY FILM</span>
-              <span class="proj-year">2026 • 4K MASTER</span>
+              <span class="proj-tag-badge">2D ANIMATED DOCUMENTARY</span>
+              <span class="proj-year">OFFICE CHANNEL • THE PRIME DOC</span>
             </div>
-            <h3 class="proj-title">The Prime Documentary</h3>
+            <h3 class="proj-title">The Prime Documentary: Brahmeshwar Mukhiya</h3>
             <p class="proj-desc">
-              Full documentary edit featuring multi-camera narrative synchronization, dynamic pacing, historical archive restoration, and cinematic DaVinci Resolve color grading.
+              Full-length 2D animated investigative crime documentary created for my company channel <strong>The Prime Doc</strong>. I handled the complete video editing: 2D animated character scenes, Ranvir Sena news archival evidence, and high-retention pacing.
             </p>
             <div class="proj-tools-pills">
-              <span class="tool-pill">Premiere Pro</span>
-              <span class="tool-pill">DaVinci Resolve</span>
+              <span class="tool-pill">Adobe Premiere Pro</span>
+              <span class="tool-pill">After Effects 2D</span>
               <span class="tool-pill">Adobe Audition</span>
-              <span class="tool-pill">Color Grading</span>
+              <span class="tool-pill">4K UHD Master</span>
             </div>
-            <div style="margin-top: 12px;">
+            <div style="margin-top: 12px; display: flex; gap: 14px; align-items: center;">
               <button onclick="openVideoModal('doc')" class="btn-primary">
                 Watch Project <i data-lucide="play"></i>
               </button>
+              <a href="https://youtu.be/n7q2PGTjLJk?si=ZO6ZUmGVNI6l1Pno" target="_blank" style="color: #ff0000; font-family: var(--font-mono); font-size: 0.85rem; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+                <i data-lucide="external-link" style="width: 14px; height: 14px;"></i> YouTube
+              </a>
             </div>
           </div>
         </div>
 
-        <!-- Project 02: Luxury Watch Commercial -->
+        <!-- Project 02: B2B SaaS Product Demo & UI Motion Design -->
         <div class="cinematic-project-row">
-          <div class="proj-visual-col" onclick="openVideoModal('watch')">
-            <img src="assets/images/proj_watch.jpg" alt="Product Ads Video">
+          <div class="proj-visual-col" onclick="openVideoModal('saas')">
+            <img src="assets/images/proj_saas.jpg" alt="B2B SaaS Video Edit" style="width: 100%; height: 100%; object-fit: cover; display: block;">
             <div class="proj-play-badge">
               <div class="proj-play-icon"><i data-lucide="play"></i></div>
             </div>
           </div>
           <div class="proj-info-col">
             <div class="proj-meta-header">
-              <span class="proj-tag-badge">COMMERCIAL AD</span>
-              <span class="proj-year">2025 • PRODUCT CAMPAIGN</span>
+              <span class="proj-tag-badge">B2B SAAS VIDEO</span>
+              <span class="proj-year">PRODUCT DEMO & UI MOTION</span>
             </div>
-            <h3 class="proj-title">Product Commercial Edit</h3>
+            <h3 class="proj-title">B2B SaaS Product Demo & UI Motion Design</h3>
             <p class="proj-desc">
-              High-energy commercial advertisement featuring dynamic speed ramps, macro product match cuts, precision lighting glows, and punchy sound design crafted for conversion.
-            </p>
-            <div class="proj-tools-pills">
-              <span class="tool-pill">After Effects</span>
-              <span class="tool-pill">Premiere Pro</span>
-              <span class="tool-pill">Speed Ramps</span>
-              <span class="tool-pill">Foley Sound</span>
-            </div>
-            <div style="margin-top: 12px;">
-              <button onclick="openVideoModal('watch')" class="btn-primary">
-                Watch Project <i data-lucide="play"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 03: Cinematic VFX Trailer -->
-        <div class="cinematic-project-row">
-          <div class="proj-visual-col" onclick="openVideoModal('trailer')">
-            <img src="assets/images/proj_trailer.jpg" alt="Cinematic Trailer">
-            <div class="proj-play-badge">
-              <div class="proj-play-icon"><i data-lucide="play"></i></div>
-            </div>
-          </div>
-          <div class="proj-info-col">
-            <div class="proj-meta-header">
-              <span class="proj-tag-badge">TRAILER & VFX</span>
-              <span class="proj-year">2026 • CINEMATIC TEASER</span>
-            </div>
-            <h3 class="proj-title">Cinematic VFX Trailer</h3>
-            <p class="proj-desc">
-              High-intensity visual teaser combining 3D title design, atmospheric anamorphic lens flares, impact hits, and layered orchestral trailer sound design.
+              High-converting B2B SaaS product explainer video engineered for software marketing. Features slick UI motion graphics, dynamic viewport zoom-ins, seamless feature walkthroughs, and crisp modern sound effects.
             </p>
             <div class="proj-tools-pills">
               <span class="tool-pill">Adobe After Effects</span>
-              <span class="tool-pill">Mocha Pro</span>
-              <span class="tool-pill">Cinema 3D</span>
-              <span class="tool-pill">Sound FX</span>
+              <span class="tool-pill">Premiere Pro</span>
+              <span class="tool-pill">UI Motion Design</span>
+              <span class="tool-pill">SaaS Conversion</span>
             </div>
             <div style="margin-top: 12px;">
-              <button onclick="openVideoModal('trailer')" class="btn-primary">
+              <button onclick="openVideoModal('saas')" class="btn-primary">
                 Watch Project <i data-lucide="play"></i>
               </button>
             </div>
           </div>
         </div>
 
-        <!-- Project 04: AI UGC Video Production -->
+        <!-- Project 03: BMW M4 Underground — AI Cinematic Video & VFX -->
         <div class="cinematic-project-row">
-          <div class="proj-visual-col" onclick="openVideoModal('ai')">
-            <img src="assets/images/proj_ai.jpg" alt="AI UGC Video">
+          <div class="proj-visual-col" onclick="openVideoModal('bmw')">
+            <img src="assets/images/proj_bmw.jpg" alt="BMW M4 Underground AI Cinematic Video" style="width: 100%; height: 100%; object-fit: cover; display: block;">
             <div class="proj-play-badge">
               <div class="proj-play-icon"><i data-lucide="play"></i></div>
             </div>
           </div>
           <div class="proj-info-col">
             <div class="proj-meta-header">
-              <span class="proj-tag-badge">AI CONTENT & AD TECH</span>
-              <span class="proj-year">2026 • SHORT-FORM VIRAL</span>
+              <span class="proj-tag-badge">AI CINEMATIC VIDEO</span>
+              <span class="proj-year">GEN-AI & 3D VFX COMPOSITING</span>
             </div>
-            <h3 class="proj-title">Future is AI — Viral UGC</h3>
+            <h3 class="proj-title">BMW M4 Underground: AI Cinematic Video & VFX</h3>
             <p class="proj-desc">
-              Hyper-realistic generative AI video creation integrated with real-time face tracking, AI voice synthesis, and high-retention subtitle animations.
+              Cutting-edge generative AI video piece featuring the BMW M4 in an atmospheric subterranean landscape. I combined neural generative video synthesis with motion tracking, volumetric lighting passes, and Hollywood-level automotive sound design.
             </p>
             <div class="proj-tools-pills">
               <span class="tool-pill">Runway Gen-3</span>
-              <span class="tool-pill">ElevenLabs</span>
-              <span class="tool-pill">Premiere Pro</span>
-              <span class="tool-pill">CapCut Pro</span>
+              <span class="tool-pill">After Effects 3D</span>
+              <span class="tool-pill">DaVinci Color Grade</span>
+              <span class="tool-pill">VFX Compositing</span>
             </div>
             <div style="margin-top: 12px;">
-              <button onclick="openVideoModal('ai')" class="btn-primary">
+              <button onclick="openVideoModal('bmw')" class="btn-primary">
+                Watch Project <i data-lucide="play"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 04: Canada Client UGC Viral Ad Campaign (Yellow Gas Station 9:16) -->
+        <div class="cinematic-project-row">
+          <div class="proj-visual-col" onclick="openVideoModal('ugc_canada')">
+            <img src="assets/images/thumb_ugc_canada.jpg" alt="Canada Client UGC Viral Ad" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+            <div class="proj-play-badge">
+              <div class="proj-play-icon"><i data-lucide="play"></i></div>
+            </div>
+          </div>
+          <div class="proj-info-col">
+            <div class="proj-meta-header">
+              <span class="proj-tag-badge">9:16 VERTICAL UGC AD</span>
+              <span class="proj-year">CANADA BRAND CAMPAIGN</span>
+            </div>
+            <h3 class="proj-title">Canada Client UGC Viral Ad (Yellow Gas Station)</h3>
+            <p class="proj-desc">
+              High-converting 9:16 vertical UGC (User-Generated Content) video commercial edited for a Canadian client. Optimized for TikTok, Instagram Reels, and YouTube Shorts with instant 3-second hook retention and animated subtitles.
+            </p>
+            <div class="proj-tools-pills">
+              <span class="tool-pill">9:16 Vertical</span>
+              <span class="tool-pill">UGC Ad Strategy</span>
+              <span class="tool-pill">Kinetic Subtitles</span>
+              <span class="tool-pill">Reels / TikTok</span>
+            </div>
+            <div style="margin-top: 12px;">
+              <button onclick="openVideoModal('ugc_canada')" class="btn-primary">
                 Watch Project <i data-lucide="play"></i>
               </button>
             </div>
@@ -362,7 +334,7 @@
       </div>
 
       <div style="text-align: center; margin-top: 48px;">
-        <a href="project-detail.html" class="btn-secondary">
+        <a href="work.html" class="btn-secondary">
           View Detailed Case Studies <i data-lucide="arrow-right"></i>
         </a>
       </div>
@@ -524,63 +496,116 @@
   </section>
 
   <!-- =========================================================================
-       YOUTUBE CHANNEL SHOWCASE (THE PRIME DOC)
+       CLIENT TESTIMONIALS & REVIEWS SECTION (WALL OF TRUST)
        ========================================================================= -->
-  <section id="youtube" class="section-padding" style="background: #08090f;">
+  <section id="testimonials" class="section-padding" style="background: #08090f;">
     <div class="container">
-      <div class="yt-showcase-box">
+      <div style="text-align: center; max-width: 700px; margin: 0 auto 50px auto;">
+        <span class="section-tag">TESTIMONIALS & CLIENT TRUST</span>
+        <h2 class="section-title">WHAT CREATORS & BRANDS <span class="text-gradient">SAY</span></h2>
+        <p style="color: var(--text-sub); font-size: 1.05rem; line-height: 1.7;">
+          Direct feedback from agency founders, SaaS teams, and documentary channels who rely on VisualNexa for high-retention video editing.
+        </p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;">
         
-        <div class="yt-info-pane">
-          <span class="section-tag">ORIGINAL PRODUCTIONS</span>
-          <div class="yt-brand-header">
-            <div style="background: #FF0000; width: 44px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg>
+        <!-- Review 01 -->
+        <div style="background: var(--bg-card); border: 1px solid var(--bg-card-border); border-radius: 20px; padding: 32px; display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden;">
+          <div style="position: absolute; top: 20px; right: 24px; color: rgba(56, 189, 248, 0.12); font-size: 4rem; font-family: serif; line-height: 1; pointer-events: none;">“</div>
+          <div>
+            <div style="display: flex; gap: 4px; color: #facc15; margin-bottom: 16px; font-size: 1.1rem;">
+              <i data-lucide="star" style="fill: #facc15; width: 18px; height: 18px;"></i>
+              <i data-lucide="star" style="fill: #facc15; width: 18px; height: 18px;"></i>
+              <i data-lucide="star" style="fill: #facc15; width: 18px; height: 18px;"></i>
+              <i data-lucide="star" style="fill: #facc15; width: 18px; height: 18px;"></i>
+              <i data-lucide="star" style="fill: #facc15; width: 18px; height: 18px;"></i>
             </div>
-            <h3 class="yt-channel-badge">THE PRIME DOC</h3>
+            <p style="color: #e2e8f0; font-size: 0.96rem; line-height: 1.7; margin-bottom: 24px; font-style: italic;">
+              "Vinayak's storytelling and 2D documentary pacing completely transformed our channel. Our audience retention crossed 70% consistently on 20-minute long investigative videos. A true master of suspense and timeline flow."
+            </p>
           </div>
-          <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 24px;">
-            My official YouTube documentary channel exploring deep dives into tech, history, and the future of human intelligence.
-          </p>
-          <a href="https://www.youtube.com/@theprimedoc" target="_blank" class="btn-primary">
-            Visit Channel <i data-lucide="external-link"></i>
-          </a>
+          <div style="display: flex; align-items: center; gap: 14px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.06);">
+            <div style="width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, #38bdf8, #0284c7); display: flex; align-items: center; justify-content: center; font-weight: 800; color: #fff; font-family: var(--font-heading);">
+              PD
+            </div>
+            <div>
+              <h5 style="font-size: 0.95rem; font-weight: 800; color: #fff; margin-bottom: 2px;">The Prime Doc Team</h5>
+              <span style="font-size: 0.78rem; color: var(--accent-cyan); font-family: var(--font-mono);">Documentary Media Channel</span>
+            </div>
+          </div>
         </div>
 
-        <div class="yt-vids-grid">
-          
-          <div class="yt-card-item" onclick="openVideoModal('yt1')">
-            <div class="yt-thumb-box">
-              <img src="assets/images/yt_thumb_1.jpg" alt="The Dark Reality of AI">
+        <!-- Review 02 -->
+        <div style="background: var(--bg-card); border: 1px solid var(--bg-card-border); border-radius: 20px; padding: 32px; display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden;">
+          <div style="position: absolute; top: 20px; right: 24px; color: rgba(56, 189, 248, 0.12); font-size: 4rem; font-family: serif; line-height: 1; pointer-events: none;">“</div>
+          <div>
+            <div style="display: flex; gap: 4px; color: #facc15; margin-bottom: 16px; font-size: 1.1rem;">
+              <i data-lucide="star" style="fill: #facc15; width: 18px; height: 18px;"></i>
+              <i data-lucide="star" style="fill: #facc15; width: 18px; height: 18px;"></i>
+              <i data-lucide="star" style="fill: #facc15; width: 18px; height: 18px;"></i>
+              <i data-lucide="star" style="fill: #facc15; width: 18px; height: 18px;"></i>
+              <i data-lucide="star" style="fill: #facc15; width: 18px; height: 18px;"></i>
             </div>
-            <div class="yt-title-box">
-              <h5>The Dark Reality of AI</h5>
-              <span>12K+ Views • Documentary</span>
+            <p style="color: #e2e8f0; font-size: 0.96rem; line-height: 1.7; margin-bottom: 24px; font-style: italic;">
+              "The SaaS product explainer video delivered by VisualNexa was phenomenal. The UI motion graphics, zoom-ins, and sound effects immediately boosted our landing page conversion rate. Turnaround was super fast!"
+            </p>
+          </div>
+          <div style="display: flex; align-items: center; gap: 14px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.06);">
+            <div style="width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, #a855f7, #6366f1); display: flex; align-items: center; justify-content: center; font-weight: 800; color: #fff; font-family: var(--font-heading);">
+              SL
+            </div>
+            <div>
+              <h5 style="font-size: 0.95rem; font-weight: 800; color: #fff; margin-bottom: 2px;">Synergy SaaS Labs</h5>
+              <span style="font-size: 0.78rem; color: #a855f7; font-family: var(--font-mono);">Product & Growth Marketing</span>
             </div>
           </div>
+        </div>
 
-          <div class="yt-card-item" onclick="openVideoModal('yt2')">
-            <div class="yt-thumb-box">
-              <img src="assets/images/yt_thumb_2.jpg" alt="India in 2030">
+        <!-- Review 03 -->
+        <div style="background: var(--bg-card); border: 1px solid var(--bg-card-border); border-radius: 20px; padding: 32px; display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden;">
+          <div style="position: absolute; top: 20px; right: 24px; color: rgba(56, 189, 248, 0.12); font-size: 4rem; font-family: serif; line-height: 1; pointer-events: none;">“</div>
+          <div>
+            <div style="display: flex; gap: 4px; color: #facc15; margin-bottom: 16px; font-size: 1.1rem;">
+              <i data-lucide="star" style="fill: #facc15; width: 18px; height: 18px;"></i>
+              <i data-lucide="star" style="fill: #facc15; width: 18px; height: 18px;"></i>
+              <i data-lucide="star" style="fill: #facc15; width: 18px; height: 18px;"></i>
+              <i data-lucide="star" style="fill: #facc15; width: 18px; height: 18px;"></i>
+              <i data-lucide="star" style="fill: #facc15; width: 18px; height: 18px;"></i>
             </div>
-            <div class="yt-title-box">
-              <h5>India in 2030 – Vision</h5>
-              <span>18K+ Views • Explainer</span>
+            <p style="color: #e2e8f0; font-size: 0.96rem; line-height: 1.7; margin-bottom: 24px; font-style: italic;">
+              "Outstanding vertical UGC ads! The hooks, kinetic animated subtitles, and rapid transitions performed incredibly well on our TikTok and Instagram Reels ad campaigns in Canada. Highly recommended editor."
+            </p>
+          </div>
+          <div style="display: flex; align-items: center; gap: 14px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.06);">
+            <div style="width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, #eab308, #f97316); display: flex; align-items: center; justify-content: center; font-weight: 800; color: #fff; font-family: var(--font-heading);">
+              CA
+            </div>
+            <div>
+              <h5 style="font-size: 0.95rem; font-weight: 800; color: #fff; margin-bottom: 2px;">Canada Brand Campaign</h5>
+              <span style="font-size: 0.78rem; color: #eab308; font-family: var(--font-mono);">E-Commerce & UGC Ads</span>
             </div>
           </div>
-
-          <div class="yt-card-item" onclick="openVideoModal('yt3')">
-            <div class="yt-thumb-box">
-              <img src="assets/images/yt_thumb_3.jpg" alt="BTS Documentary Making">
-            </div>
-            <div class="yt-title-box">
-              <h5>BTS Filmmaking</h5>
-              <span>9K+ Views • Editing BTS</span>
-            </div>
-          </div>
-
         </div>
 
       </div>
+
+      <!-- TRUST METRICS BAR -->
+      <div style="margin-top: 48px; background: rgba(56, 189, 248, 0.04); border: 1px solid rgba(56, 189, 248, 0.15); border-radius: 16px; padding: 20px 32px; display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; gap: 20px;">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <i data-lucide="check-circle" style="color: var(--accent-cyan); width: 22px; height: 22px;"></i>
+          <span style="font-weight: 700; font-size: 0.95rem;">100% On-Time Delivery</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <i data-lucide="award" style="color: #facc15; width: 22px; height: 22px;"></i>
+          <span style="font-weight: 700; font-size: 0.95rem;">5.0 / 5.0 Client Rating</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <i data-lucide="zap" style="color: #a855f7; width: 22px; height: 22px;"></i>
+          <span style="font-weight: 700; font-size: 0.95rem;">48-Hour Rush Available</span>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -659,14 +684,14 @@
         <a href="https://www.youtube.com/@theprimedoc" target="_blank" class="social-pill">
           <i data-lucide="youtube"></i> YouTube
         </a>
-        <a href="https://www.instagram.com/tensec_ai/" target="_blank" class="social-pill">
+        <a href="https://www.instagram.com/visualnexa_/" target="_blank" class="social-pill">
           <i data-lucide="instagram"></i> Instagram
         </a>
         <a href="https://www.linkedin.com/in/vinayak-vallabh-rai-8571233b5/" target="_blank" class="social-pill">
           <i data-lucide="linkedin"></i> LinkedIn
         </a>
         <a href="https://maps.google.com/?q=Kharar,+Punjab,+India" target="_blank" class="social-pill">
-          <i data-lucide="map-pin"></i> Kharar, Punjab, India
+          <i data-lucide="map-pin"></i> Mohali, Punjab, India
         </a>
       </div>
     </div>
@@ -740,9 +765,9 @@
   </div>
 
   <!-- SCRIPTS -->
-  <script src="static/js/studio-3d.js"></script>
-  <script src="static/js/cinematic-scroll.js"></script>
-  <script src="script.js"></script>
+  <script src="static/js/studio-3d.js?v=2.1"></script>
+  <script src="static/js/cinematic-scroll.js?v=2.1"></script>
+  <script src="script.js?v=2.1"></script>
   <script>
     lucide.createIcons();
   </script>

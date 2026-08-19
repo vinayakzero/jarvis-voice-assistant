@@ -3,13 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project Case Studies & Detailed Breakdown | Vinayak Vallabh Rai</title>
+  <title>Project Case Studies & Detailed Breakdown | VisualNexa</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script src="https://unpkg.com/lucide@latest"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <style>
     .detail-hero { padding-top: 140px; padding-bottom: 40px; }
     .project-detail-card {
@@ -28,218 +27,191 @@
       gap: 16px;
     }
     .badge-tag {
-      background: rgba(190, 242, 100, 0.1);
-      color: var(--accent-lime);
+      background: rgba(56, 189, 248, 0.12);
+      color: var(--accent-cyan);
       padding: 6px 14px;
       border-radius: 50px;
       font-size: 0.8rem;
       font-weight: 700;
-    }
-    .tech-pill {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      padding: 6px 14px;
-      border-radius: 8px;
-      font-size: 0.78rem;
-      color: var(--text-sub);
+      font-family: var(--font-mono);
     }
     .specs-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 16px;
       margin: 24px 0;
-      background: #0b0b10;
+      background: rgba(255,255,255,0.02);
       padding: 20px;
       border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.06);
     }
     @media(max-width: 768px){ .specs-grid { grid-template-columns: repeat(2, 1fr); } }
   </style>
 </head>
 <body>
 
-  <!-- HEADER -->
+  <!-- FIXED HEADER & NAVIGATION -->
   <header class="navbar">
     <div class="container">
       <a href="index.html" class="logo">
-        <span class="logo-badge">VR</span>
+        <img src="assets/images/visualnexa_logo.png" alt="VisualNexa" class="logo-img">
+        <div class="logo-meta">
+          <span class="logo-title">VISUALNEXA</span>
+          <span class="logo-sub">VINAYAK VALLABH RAI • VIDEO EDITOR</span>
+        </div>
       </a>
+      
       <nav>
         <ul class="nav-links">
-          <li><a href="index.html">HOME</a></li>
-          <li><a href="about-me-detail.html">ABOUT</a></li>
-          <li><a href="skills-detail.html">SKILLS</a></li>
-          <li><a href="project-detail.html" class="active">WORK</a></li>
-          <li><a href="youtube-detail.html">YOUTUBE</a></li>
+          <li><a href="index.html">STUDIO</a></li>
+          <li><a href="showreel.html">SHOWREEL</a></li>
+          <li><a href="work.html" class="active">WORK</a></li>
+          <li><a href="toolkit.html">TOOLKIT</a></li>
+          <li><a href="services.html">SERVICES</a></li>
+          <li><a href="youtube.html">YOUTUBE</a></li>
           <li><a href="contact.html">CONTACT</a></li>
         </ul>
       </nav>
-      <button onclick="location.href='contact.html'" class="btn-work-together">Let's Work Together</button>
+      
+      <a href="contact.html" class="btn-work-together">Let's Create</a>
     </div>
   </header>
 
-  <!-- CONTENT CONTAINER -->
   <div class="container detail-hero">
     
-    <a href="index.html#work" style="color: var(--accent-lime); text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px;">
-      <i data-lucide="arrow-left"></i> Back to Portfolio
+    <a href="work.html" style="color: var(--accent-cyan); text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px; font-family: var(--font-mono); font-size: 0.9rem;">
+      <i data-lucide="arrow-left"></i> View Interactive Work Page
     </a>
 
-    <h1 style="font-family: var(--font-heading); font-size: 2.8rem; font-weight: 900; margin-bottom: 12px;">
-      PROJECT <span class="text-gradient">CASE STUDIES</span>
+    <span class="section-tag">PORTFOLIO CASE STUDIES</span>
+    <h1 style="font-family: var(--font-heading); font-size: 2.8rem; font-weight: 900; margin-bottom: 16px;">
+      DETAILED PROJECT <span class="text-gradient">BREAKDOWNS</span>
     </h1>
-    <p style="color: var(--text-muted); font-size: 1.05rem; max-width: 700px; margin-bottom: 40px;">
-      Detailed look into editing workflows, visual effects pipelines, color grading, sound design, and AI video integrations created by Vinayak Vallabh Rai.
+    <p style="color: var(--text-muted); font-size: 1.05rem; max-width: 700px; line-height: 1.7; margin-bottom: 48px;">
+      Deep dive into technical workflows, timeline architectures, color grading nodes, and audio design mixes across my featured projects.
     </p>
 
-    <!-- CASE STUDY 1: DOCUMENTARY EDIT -->
+    <!-- CASE STUDY 1: THE PRIME DOC -->
     <div class="project-detail-card" id="doc">
       <div class="project-header-meta">
         <div>
-          <span class="badge-tag">DOCUMENTARY FILMMAKING</span>
-          <h2 style="font-family: var(--font-heading); font-size: 2rem; font-weight: 800; margin-top: 8px;">The Prime Documentary</h2>
+          <span class="badge-tag">2D ANIMATED DOCUMENTARY</span>
+          <h2 style="font-family: var(--font-heading); font-size: 2rem; font-weight: 800; margin-top: 8px; color: #fff;">The Prime Doc: Brahmeshwar Mukhiya</h2>
         </div>
         <button onclick="openVideoModal('doc')" class="btn-primary">
-          Watch Full Edit <i data-lucide="play"></i>
+          Watch Video <i data-lucide="play"></i>
         </button>
       </div>
 
-      <div style="position: relative; width: 100%; padding-top: 45%; border-radius: 16px; overflow: hidden; margin-bottom: 24px;">
-        <img src="assets/images/proj_doc.jpg" alt="Documentary Edit" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit: cover;">
+      <div style="position: relative; width: 100%; border-radius: 16px; overflow: hidden; margin-bottom: 24px;">
+        <img src="assets/images/yt_brahmeshwar.jpg" alt="The Prime Documentary" style="width: 100%; height: auto; object-fit: cover; display: block;">
       </div>
+
+      <p style="color: var(--text-muted); line-height: 1.75; font-size: 0.96rem;">
+        Full investigative 2D animated crime documentary editing for company channel The Prime Doc. Involved structuring 30+ minutes of multi-source historical footage, newspaper clipping animations, and dramatic pacing for high audience retention.
+      </p>
 
       <div class="specs-grid">
         <div>
-          <span style="font-size: 0.7rem; color: var(--text-muted); display: block;">ROLE</span>
-          <strong style="color: #fff; font-size: 0.9rem;">Lead Editor & Storyteller</strong>
+          <span style="font-size: 0.72rem; color: var(--text-muted); display: block; font-family: var(--font-mono);">RESOLUTION</span>
+          <strong style="color: #fff; font-size: 0.92rem;">4K UHD (3840x2160)</strong>
         </div>
         <div>
-          <span style="font-size: 0.7rem; color: var(--text-muted); display: block;">SOFTWARE</span>
-          <strong style="color: #fff; font-size: 0.9rem;">Premiere Pro, After Effects</strong>
+          <span style="font-size: 0.72rem; color: var(--text-muted); display: block; font-family: var(--font-mono);">FRAME RATE</span>
+          <strong style="color: #fff; font-size: 0.92rem;">24.00 fps Cinematic</strong>
         </div>
         <div>
-          <span style="font-size: 0.7rem; color: var(--text-muted); display: block;">TIMELINE</span>
-          <strong style="color: #fff; font-size: 0.9rem;">2 Weeks Editing & Grade</strong>
+          <span style="font-size: 0.72rem; color: var(--text-muted); display: block; font-family: var(--font-mono);">EDITING SOFTWARE</span>
+          <strong style="color: var(--accent-cyan); font-size: 0.92rem;">Premiere Pro + AE</strong>
         </div>
         <div>
-          <span style="font-size: 0.7rem; color: var(--text-muted); display: block;">RESOLUTION</span>
-          <strong style="color: #fff; font-size: 0.9rem;">4K UHD (3840x2160)</strong>
+          <span style="font-size: 0.72rem; color: var(--text-muted); display: block; font-family: var(--font-mono);">COLOR SPACE</span>
+          <strong style="color: #fff; font-size: 0.92rem;">Rec.709 Mastered</strong>
         </div>
-      </div>
-
-      <h4 style="font-family: var(--font-heading); color: var(--accent-lime); margin-bottom: 8px;">THE CHALLENGE & WORKFLOW</h4>
-      <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 16px;">
-        Crafted a deep-dive documentary narrative weaving historical context, cinematic B-roll, motion graphics, and audio soundscapes. Used advanced multi-cam editing, customized lower thirds, kinetic typography, and custom Lut color grading.
-      </p>
-
-      <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-        <span class="tech-pill">Sound Design & Foley</span>
-        <span class="tech-pill">Multi-Cam Sync</span>
-        <span class="tech-pill">Cinematic LUTs</span>
-        <span class="tech-pill">Kinetic Text</span>
       </div>
     </div>
 
-    <!-- CASE STUDY 2: PRODUCT ADS VIDEO -->
-    <div class="project-detail-card" id="watch">
+    <!-- CASE STUDY 2: B2B SAAS -->
+    <div class="project-detail-card" id="saas">
       <div class="project-header-meta">
         <div>
-          <span class="badge-tag">COMMERCIAL & AI PRODUCT ADS</span>
-          <h2 style="font-family: var(--font-heading); font-size: 2rem; font-weight: 800; margin-top: 8px;">Bold. Clean. Timeless. (Luxury Watch Commercial)</h2>
+          <span class="badge-tag">B2B SAAS MOTION UI</span>
+          <h2 style="font-family: var(--font-heading); font-size: 2rem; font-weight: 800; margin-top: 8px; color: #fff;">B2B SaaS Product Demo & UI Motion Design</h2>
         </div>
-        <button onclick="openVideoModal('watch')" class="btn-primary">
-          Watch Commercial <i data-lucide="play"></i>
+        <button onclick="openVideoModal('saas')" class="btn-primary">
+          Watch Demo <i data-lucide="play"></i>
         </button>
       </div>
 
-      <div style="position: relative; width: 100%; padding-top: 45%; border-radius: 16px; overflow: hidden; margin-bottom: 24px;">
-        <img src="assets/images/proj_watch.jpg" alt="Product Ads Video" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit: cover;">
+      <div style="position: relative; width: 100%; border-radius: 16px; overflow: hidden; margin-bottom: 24px;">
+        <img src="assets/images/proj_saas.jpg" alt="B2B SaaS Video Edit" style="width: 100%; height: auto; object-fit: cover; display: block;">
       </div>
 
-      <div class="specs-grid">
-        <div>
-          <span style="font-size: 0.7rem; color: var(--text-muted); display: block;">CATEGORY</span>
-          <strong style="color: #fff; font-size: 0.9rem;">High-Conversion Commercial</strong>
-        </div>
-        <div>
-          <span style="font-size: 0.7rem; color: var(--text-muted); display: block;">TOOLS USED</span>
-          <strong style="color: #fff; font-size: 0.9rem;">After Effects, AI Video Gen</strong>
-        </div>
-        <div>
-          <span style="font-size: 0.7rem; color: var(--text-muted); display: block;">RESULTS</span>
-          <strong style="color: #fff; font-size: 0.9rem;">High Engagement Ad Campaign</strong>
-        </div>
-        <div>
-          <span style="font-size: 0.7rem; color: var(--text-muted); display: block;">FORMAT</span>
-          <strong style="color: #fff; font-size: 0.9rem;">Vertical & Landscape 4K</strong>
-        </div>
-      </div>
-
-      <h4 style="font-family: var(--font-heading); color: var(--accent-lime); margin-bottom: 8px;">PRODUCTION & ANIMATION DETAIL</h4>
-      <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 16px;">
-        Combined 3D product renders with AI generated studio reflections and fast-paced rhythmic editing to create a premium luxury wristwatch commercial tailored for social media & TV ads.
+      <p style="color: var(--text-muted); line-height: 1.75; font-size: 0.96rem;">
+        High-converting B2B SaaS software explainer video engineered for marketing and investor presentations. Features slick UI motion graphics, dynamic viewport zoom-ins, seamless feature walkthroughs, and crisp modern sound effects.
       </p>
     </div>
 
-    <!-- CASE STUDY 3: CINEMATIC TRAILER -->
-    <div class="project-detail-card" id="trailer">
+    <!-- CASE STUDY 3: BMW M4 -->
+    <div class="project-detail-card" id="bmw">
       <div class="project-header-meta">
         <div>
-          <span class="badge-tag">VFX & CINEMATIC COMPOSITING</span>
-          <h2 style="font-family: var(--font-heading); font-size: 2rem; font-weight: 800; margin-top: 8px;">Cinematic Fantasy Trailer</h2>
+          <span class="badge-tag">AI CINEMATIC VIDEO & VFX</span>
+          <h2 style="font-family: var(--font-heading); font-size: 2rem; font-weight: 800; margin-top: 8px; color: #fff;">BMW M4 Underground: AI Cinematic Video & VFX</h2>
         </div>
-        <button onclick="openVideoModal('trailer')" class="btn-primary">
-          Watch Trailer <i data-lucide="play"></i>
+        <button onclick="openVideoModal('bmw')" class="btn-primary">
+          Watch Cinematic <i data-lucide="play"></i>
         </button>
       </div>
 
-      <div style="position: relative; width: 100%; padding-top: 45%; border-radius: 16px; overflow: hidden; margin-bottom: 24px;">
-        <img src="assets/images/proj_trailer.jpg" alt="Cinematic Trailer" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit: cover;">
+      <div style="position: relative; width: 100%; border-radius: 16px; overflow: hidden; margin-bottom: 24px;">
+        <img src="assets/images/proj_bmw.jpg" alt="BMW M4 AI Cinematic Video" style="width: 100%; height: auto; object-fit: cover; display: block;">
       </div>
 
-      <p style="color: var(--text-muted); line-height: 1.7;">
-        3D visual environment composition, atmospheric haze, lighting pass, rotoscoping, and intense orchestral audio sync created for movie trailer launch.
+      <p style="color: var(--text-muted); line-height: 1.75; font-size: 0.96rem;">
+        Cutting-edge generative AI video piece featuring the BMW M4 in an atmospheric subterranean landscape. I combined neural generative video synthesis with motion tracking, volumetric lighting passes, and Hollywood-level automotive sound design.
       </p>
     </div>
 
-    <!-- CASE STUDY 4: AI UGC VIDEO -->
-    <div class="project-detail-card" id="ai">
+    <!-- CASE STUDY 4: CANADA UGC -->
+    <div class="project-detail-card" id="ugc">
       <div class="project-header-meta">
         <div>
-          <span class="badge-tag">AI UGC & NEXT-GEN CREATIVE</span>
-          <h2 style="font-family: var(--font-heading); font-size: 2rem; font-weight: 800; margin-top: 8px;">Future Is AI (AI UGC Campaign)</h2>
+          <span class="badge-tag">9:16 VERTICAL UGC AD</span>
+          <h2 style="font-family: var(--font-heading); font-size: 2rem; font-weight: 800; margin-top: 8px; color: #fff;">Canada Client UGC Viral Ad (Yellow Gas Station)</h2>
         </div>
-        <button onclick="openVideoModal('ai')" class="btn-primary">
+        <button onclick="openVideoModal('ugc_canada')" class="btn-primary">
           Watch UGC Video <i data-lucide="play"></i>
         </button>
       </div>
 
-      <div style="position: relative; width: 100%; padding-top: 45%; border-radius: 16px; overflow: hidden; margin-bottom: 24px;">
-        <img src="assets/images/proj_ai.jpg" alt="AI UGC Video" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit: cover;">
+      <div style="position: relative; width: 100%; border-radius: 16px; overflow: hidden; margin-bottom: 24px;">
+        <img src="assets/images/thumb_ugc_canada.jpg" alt="Canada Client UGC Viral Ad" style="width: 100%; height: auto; object-fit: cover; display: block;">
       </div>
 
-      <p style="color: var(--text-muted); line-height: 1.7;">
-        Hyper-realistic AI avatars, voice cloning, automatic dynamic captioning, and hook-driven video editing designed for maximum viewer retention.
+      <p style="color: var(--text-muted); line-height: 1.75; font-size: 0.96rem;">
+        High-converting 9:16 vertical UGC video commercial edited for a Canadian brand campaign with instant 3-second hook retention and animated subtitles.
       </p>
     </div>
 
   </div>
 
-  <!-- VIDEO MODAL PLAYER -->
+  <!-- VIDEO MODAL PLAYER (Hybrid MP4 & YouTube) -->
   <div id="videoModal" class="modal-overlay">
-    <div class="modal-container">
-      <button id="modalClose" class="modal-close"><i data-lucide="x"></i></button>
+    <div class="modal-container" style="max-width: 860px;">
+      <button id="modalClose" class="modal-close" onclick="closeVideoModal()"><i data-lucide="x"></i></button>
       <h3 id="modalVideoTitle" style="font-family: var(--font-heading); font-size: 1.3rem; font-weight: 800; margin-bottom: 16px;">Video Player</h3>
-      <div style="position: relative; padding-top: 56.25%; width: 100%; border-radius: 12px; overflow: hidden; background: #000;">
-        <iframe id="modalVideoFrame" style="position: absolute; top:0; left:0; width:100%; height:100%; border:none;" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      <div id="modalPlayerContent" style="position: relative; width: 100%; border-radius: 12px; overflow: hidden; background: #000;">
+        <iframe id="modalVideoFrame" style="width: 100%; aspect-ratio: 16/9; border:none; display: block;" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <video id="modalHtml5Video" controls style="width: 100%; max-height: 75vh; border-radius: 12px; display: none;" playsinline></video>
       </div>
     </div>
   </div>
 
   <footer class="footer-bottom container">
-    <p>© 2026 Vinayak Vallabh Rai. Mohali, Punjab, India.</p>
+    <p>© 2026 VisualNexa • Vinayak Vallabh Rai • All Rights Reserved.</p>
   </footer>
 
-  <script src="static/js/three-canvas.js"></script>
   <script src="script.js"></script>
   <script>lucide.createIcons();</script>
 </body>

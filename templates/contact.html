@@ -3,143 +3,188 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Vinayak Vallabh Rai | Get In Touch</title>
+  <title>Start A Project • Contact VisualNexa | Vinayak Vallabh Rai</title>
+  <meta name="description" content="Contact VisualNexa - Vinayak Vallabh Rai. Professional Video Editing, Color Grading, and Visual Storytelling. Based in Mohali, Punjab, India.">
+  
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
   <link rel="stylesheet" href="styles.css">
+  
+  <!-- Feather / Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 <body>
 
-  <!-- HEADER -->
+  <!-- FIXED HEADER & NAVIGATION -->
   <header class="navbar">
     <div class="container">
       <a href="index.html" class="logo">
-        <span class="logo-badge">VR</span>
+        <img src="assets/images/visualnexa_logo.png" alt="VisualNexa" class="logo-img">
+        <div class="logo-meta">
+          <span class="logo-title">VISUALNEXA</span>
+          <span class="logo-sub">VINAYAK VALLABH RAI • VIDEO EDITOR</span>
+        </div>
       </a>
+      
       <nav>
         <ul class="nav-links">
-          <li><a href="index.html">HOME</a></li>
-          <li><a href="about-me-detail.html">ABOUT</a></li>
-          <li><a href="skills-detail.html">SKILLS</a></li>
-          <li><a href="project-detail.html">WORK</a></li>
-          <li><a href="youtube-detail.html">YOUTUBE</a></li>
+          <li><a href="index.html">STUDIO</a></li>
+          <li><a href="showreel.html">SHOWREEL</a></li>
+          <li><a href="work.html">WORK</a></li>
+          <li><a href="toolkit.html">TOOLKIT</a></li>
+          <li><a href="services.html">SERVICES</a></li>
+          <li><a href="youtube.html">YOUTUBE</a></li>
           <li><a href="contact.html" class="active">CONTACT</a></li>
         </ul>
       </nav>
-      <button onclick="location.href='contact.html'" class="btn-work-together">Let's Work Together</button>
+      
+      <a href="contact.html" class="btn-work-together">Let's Create</a>
     </div>
   </header>
 
-  <div class="container" style="padding-top: 140px; padding-bottom: 60px;">
-    
-    <a href="index.html#contact" style="color: var(--accent-lime); text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px;">
-      <i data-lucide="arrow-left"></i> Back to Homepage
-    </a>
+  <!-- CONTACT HERO -->
+  <section class="section-padding" style="padding-top: 140px; padding-bottom: 40px;">
+    <div class="container">
+      <span class="section-tag">LET'S COLLABORATE</span>
+      <h1 class="section-title">START A <span class="text-gradient">PROJECT</span></h1>
+      <p style="color: var(--text-sub); font-size: 1.15rem; max-width: 720px; line-height: 1.7;">
+        Have a documentary, commercial ad campaign, or YouTube channel that needs high-retention video editing and cinematic color grading? Let's bring your vision to life.
+      </p>
+    </div>
+  </section>
 
-    <span class="section-tag">GET IN TOUCH</span>
-    <h1 style="font-family: var(--font-heading); font-size: 2.8rem; font-weight: 900; margin-bottom: 32px;">
-      LET'S CREATE SOMETHING <span class="text-gradient">AMAZING</span>
-    </h1>
-
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+  <!-- CONTACT CONTENT GRID -->
+  <section class="section-padding" style="padding-top: 20px;">
+    <div class="container">
       
-      <!-- Contact Info Box -->
-      <div style="background: var(--bg-card); border: 1px solid var(--bg-card-border); border-radius: 24px; padding: 40px;">
-        <h3 style="font-family: var(--font-heading); font-size: 1.6rem; font-weight: 800; margin-bottom: 20px;">Direct Contact Information</h3>
+      <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: flex-start;">
         
+        <!-- Left: Project Inquiry Form -->
+        <div style="background: var(--bg-card); border: 1px solid var(--bg-card-border); border-radius: 28px; padding: 40px;">
+          <h3 style="font-family: var(--font-heading); font-size: 1.8rem; font-weight: 800; margin-bottom: 24px;">Project Inquiry Form</h3>
+          
+          <form id="contactPageForm" onsubmit="handleContactSubmit(event)">
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+              <div class="form-group">
+                <label>Your Name *</label>
+                <input type="text" id="cName" class="form-control" placeholder="e.g. Christopher Nolan" required>
+              </div>
+
+              <div class="form-group">
+                <label>Your Email *</label>
+                <input type="email" id="cEmail" class="form-control" placeholder="name@company.com" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Project Type / Service *</label>
+              <select id="cService" class="form-control" style="background: #111420; color: #fff;">
+                <option value="youtube">High-Retention YouTube Documentary</option>
+                <option value="commercial">Commercial Ad / Product Launch</option>
+                <option value="color">Cinematic Color Grading (DaVinci)</option>
+                <option value="vfx">Motion Graphics & VFX Compositing</option>
+                <option value="shorts">Short-Form Viral Reels / TikToks</option>
+                <option value="other">Full Custom Post-Production Package</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>Estimated Project Timeline / Deadline</label>
+              <input type="text" id="cTimeline" class="form-control" placeholder="e.g. Within 1-2 weeks">
+            </div>
+
+            <div class="form-group">
+              <label>Project Brief & Raw Footage Details *</label>
+              <textarea id="cMessage" class="form-control" rows="5" placeholder="Describe your vision, target audience, footage format, references..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary" style="width: 100%; justify-content: center; padding: 16px; font-size: 1rem;">
+              Send Project Inquiry <i data-lucide="send"></i>
+            </button>
+          </form>
+        </div>
+
+        <!-- Right: Direct Channels & Information -->
         <div style="display: flex; flex-direction: column; gap: 24px;">
-          <div style="display: flex; items-center: flex-start; gap: 16px;">
-            <div class="social-icon" style="width: 48px; height: 48px; color: var(--accent-lime);"><i data-lucide="mail"></i></div>
-            <div>
-              <label style="font-size: 0.75rem; color: var(--text-muted); font-weight: 700;">EMAIL ADDRESS</label>
-              <h4 style="font-size: 1rem; color: #fff;"><a href="mailto:vinayakrai196@gmail.com" style="color: inherit; text-decoration: none;">vinayakrai196@gmail.com</a></h4>
-            </div>
+          
+          <!-- Direct WhatsApp Card -->
+          <div style="background: var(--bg-card); border: 1px solid rgba(34, 197, 94, 0.3); border-radius: 24px; padding: 32px;">
+            <span style="color: #22c55e; font-family: var(--font-mono); font-size: 0.8rem; font-weight: 800; letter-spacing: 1px;">INSTANT MESSAGING</span>
+            <h4 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 800; margin: 8px 0 12px;">Chat on WhatsApp</h4>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px;">Need a fast quote or want to discuss an urgent editing timeline?</p>
+            <a href="https://wa.me/916306840513?text=Hi%20Vinayak,%20I%20saw%20your%20VisualNexa%20portfolio%20and%20want%20to%20discuss%20a%20project!" target="_blank" class="btn-primary" style="background: #22c55e; box-shadow: 0 0 20px rgba(34, 197, 94, 0.4); display: inline-flex; align-items: center; gap: 10px;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="#ffffff" style="flex-shrink: 0;"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm5.77 14.07c-.24.67-1.39 1.29-1.92 1.37-.5.08-1.15.11-3.32-.78-2.61-1.07-4.29-3.73-4.42-3.9-.13-.18-1.06-1.41-1.06-2.69s.67-1.91.91-2.17c.24-.26.52-.33.7-.33.17 0 .35 0 .5.01.16.01.37-.06.58.44.22.52.74 1.82.81 1.95.07.13.11.28.02.45-.09.17-.14.28-.27.43-.14.16-.29.35-.41.47-.14.14-.28.29-.12.57.16.27.7 1.15 1.5 1.86 1.03.92 1.9 1.21 2.17 1.34.27.14.43.12.59-.07.16-.18.69-.81.88-1.08.18-.27.37-.23.62-.13.25.09 1.58.74 1.85.88.27.13.45.2.52.31.06.11.06.66-.18 1.33z"/></svg>
+              WhatsApp +91 6306840513
+            </a>
           </div>
 
-          <a href="https://maps.google.com/?q=Kharar,+Punjab,+India" target="_blank" style="display: flex; align-items: flex-start; gap: 16px; text-decoration: none; color: inherit;">
-            <div class="social-icon" style="width: 48px; height: 48px; color: var(--accent-lime);"><i data-lucide="map-pin"></i></div>
-            <div>
-              <label style="font-size: 0.75rem; color: var(--text-muted); font-weight: 700;">LOCATION (OPEN MAP ↗)</label>
-              <h4 style="font-size: 1rem; color: #fff;">Kharar, Punjab, India</h4>
-            </div>
-          </a>
-
-          <div style="display: flex; items-center: flex-start; gap: 16px;">
-            <div class="social-icon" style="width: 48px; height: 48px; color: var(--accent-lime);"><i data-lucide="youtube"></i></div>
-            <div>
-              <label style="font-size: 0.75rem; color: var(--text-muted); font-weight: 700;">YOUTUBE CHANNEL</label>
-              <h4 style="font-size: 1rem; color: #fff;"><a href="https://www.youtube.com/@theprimedoc" target="_blank" style="color: inherit; text-decoration: none;">@theprimedoc</a></h4>
-            </div>
+          <!-- Direct Instagram Card -->
+          <div style="background: var(--bg-card); border: 1px solid rgba(236, 72, 153, 0.3); border-radius: 24px; padding: 32px;">
+            <span style="color: #ec4899; font-family: var(--font-mono); font-size: 0.8rem; font-weight: 800; letter-spacing: 1px;">INSTAGRAM PROFILE & DM</span>
+            <h4 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 800; margin: 8px 0 12px;">DM on Instagram</h4>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px;">Follow @visualnexa_ for daily editing breakdowns, BTS reels, and direct messages.</p>
+            <a href="https://www.instagram.com/visualnexa_/" target="_blank" class="btn-primary" style="background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045); box-shadow: 0 0 20px rgba(225, 48, 108, 0.45);">
+              <i data-lucide="instagram"></i> Follow @visualnexa_
+            </a>
           </div>
+
+          <!-- Direct Email Card -->
+          <div style="background: var(--bg-card); border: 1px solid var(--bg-card-border); border-radius: 24px; padding: 32px;">
+            <span class="section-tag">DIRECT INBOX</span>
+            <h4 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 800; margin: 8px 0 12px;">Email Inquiries</h4>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 16px;">Send project briefs, scripts, or raw footage links directly:</p>
+            <a href="mailto:mail2vinayakvallabhrai@gmail.com" style="color: var(--accent-cyan); font-family: var(--font-mono); font-weight: 700; font-size: 0.95rem; word-break: break-all;">
+              mail2vinayakvallabhrai@gmail.com
+            </a>
+          </div>
+
+          <!-- Location & Availability Card -->
+          <div style="background: var(--bg-card); border: 1px solid var(--bg-card-border); border-radius: 24px; padding: 32px;">
+            <span class="section-tag">STUDIO LOCATION</span>
+            <h4 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 800; margin: 8px 0 12px;">Mohali, Punjab, India</h4>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">
+              Operating remotely worldwide across US, UK, Europe, and Asia-Pacific time zones.
+            </p>
+          </div>
+
         </div>
 
-        <div style="margin-top: 36px;">
-          <label style="font-size: 0.85rem; color: var(--text-muted); font-weight: 700; display: block; margin-bottom: 12px;">SOCIAL PROFILES</label>
-          <div class="social-icons">
-            <a href="https://www.youtube.com/@theprimedoc" target="_blank" class="social-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
-            <a href="https://www.instagram.com/tensec_ai/" target="_blank" class="social-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
-            <a href="https://www.linkedin.com/in/vinayak-vallabh-rai-8571233b5/" target="_blank" class="social-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg></a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Contact Form -->
-      <div style="background: var(--bg-card); border: 1px solid var(--bg-card-border); border-radius: 24px; padding: 40px;">
-        <h3 style="font-family: var(--font-heading); font-size: 1.6rem; font-weight: 800; margin-bottom: 20px;">Send a Message</h3>
-        
-        <form id="contactFormPage" onsubmit="event.preventDefault(); showToast('Message Sent Successfully!'); this.reset();">
-          <div class="form-group">
-            <label>Full Name</label>
-            <input type="text" class="form-control" placeholder="Enter your name" required>
-          </div>
-          
-          <div class="form-group">
-            <label>Email Address</label>
-            <input type="email" class="form-control" placeholder="Enter your email" required>
-          </div>
-
-          <div class="form-group">
-            <label>Project Scope / Service Required</label>
-            <select class="form-control" style="background: #1a1a24; color: #fff;">
-              <option>Video Editing & VFX</option>
-              <option>Documentary & YouTube Creation</option>
-              <option>AI UGC & Product Ads Video</option>
-              <option>Graphic Design & Thumbnails</option>
-            </select>
-          </div>
-          
-          <div class="form-group">
-            <label>Message Details</label>
-            <textarea class="form-control" rows="4" placeholder="Describe your project, timeline, and goals..." required></textarea>
-          </div>
-          
-          <button type="submit" class="btn-primary" style="width: 100%; justify-content: center; margin-top: 10px;">
-            Submit Project Inquiry <i data-lucide="send"></i>
-          </button>
-        </form>
       </div>
 
     </div>
+  </section>
 
-  </div>
-
-  <!-- TOAST NOTIFICATION -->
-  <div id="toastNotification" class="toast-container">
-    <div class="toast">
-      <i data-lucide="check-circle" style="color: var(--accent-lime);"></i>
-      <span id="toastMessage">Action completed!</span>
+  <!-- TOAST CONTAINER -->
+  <div class="toast-container">
+    <div id="contactToast" class="toast">
+      <i data-lucide="check-circle" style="color: var(--accent-cyan);"></i>
+      <span id="contactToastMsg">Message sent successfully!</span>
     </div>
   </div>
 
+  <!-- FOOTER -->
   <footer class="footer-bottom container">
-    <p>© 2026 Vinayak Vallabh Rai. Mohali, Punjab, India.</p>
+    <p>© 2026 VisualNexa • Vinayak Vallabh Rai • All Rights Reserved.</p>
   </footer>
 
-  <script src="static/js/three-canvas.js"></script>
   <script src="script.js"></script>
-  <script>lucide.createIcons();</script>
+  <script>
+    lucide.createIcons();
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('cName').value;
+      const toast = document.getElementById('contactToast');
+      const toastMsg = document.getElementById('contactToastMsg');
+      toastMsg.innerText = `Thank you ${name}! Your inquiry has been received.`;
+      toast.classList.add('show');
+      setTimeout(() => { toast.classList.remove('show'); }, 4500);
+      document.getElementById('contactPageForm').reset();
+    }
+  </script>
 </body>
 </html>

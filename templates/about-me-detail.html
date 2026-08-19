@@ -3,13 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Me - Vinayak Vallabh Rai | Designer & Video Editor</title>
+  <title>About Vinayak Vallabh Rai • Video Editor | VisualNexa</title>
+  <meta name="description" content="Personal story, editing philosophy, and workstation specs of Vinayak Vallabh Rai - Video Editor at VisualNexa.">
+  
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
   <link rel="stylesheet" href="styles.css">
   <script src="https://unpkg.com/lucide@latest"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  
   <style>
     .page-hero { padding-top: 140px; padding-bottom: 60px; }
     .about-card-large {
@@ -20,9 +25,9 @@
       margin-bottom: 40px;
     }
     .spec-badge {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      padding: 16px 20px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 18px 20px;
       border-radius: 16px;
       display: flex;
       align-items: center;
@@ -32,40 +37,47 @@
       width: 46px;
       height: 46px;
       border-radius: 12px;
-      background: rgba(190, 242, 100, 0.1);
+      background: rgba(56, 189, 248, 0.12);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--accent-lime);
+      color: var(--accent-cyan);
     }
   </style>
 </head>
 <body>
 
-  <!-- HEADER NAVBAR -->
+  <!-- FIXED HEADER & NAVIGATION -->
   <header class="navbar">
     <div class="container">
       <a href="index.html" class="logo">
-        <span class="logo-badge">VR</span>
+        <img src="assets/images/visualnexa_logo.png" alt="VisualNexa" class="logo-img">
+        <div class="logo-meta">
+          <span class="logo-title">VISUALNEXA</span>
+          <span class="logo-sub">VINAYAK VALLABH RAI • VIDEO EDITOR</span>
+        </div>
       </a>
+      
       <nav>
         <ul class="nav-links">
-          <li><a href="index.html">HOME</a></li>
-          <li><a href="about-me-detail.html" class="active">ABOUT</a></li>
-          <li><a href="skills-detail.html">SKILLS</a></li>
-          <li><a href="project-detail.html">WORK</a></li>
-          <li><a href="youtube-detail.html">YOUTUBE</a></li>
+          <li><a href="index.html">STUDIO</a></li>
+          <li><a href="showreel.html">SHOWREEL</a></li>
+          <li><a href="work.html">WORK</a></li>
+          <li><a href="toolkit.html">TOOLKIT</a></li>
+          <li><a href="services.html">SERVICES</a></li>
+          <li><a href="youtube.html">YOUTUBE</a></li>
           <li><a href="contact.html">CONTACT</a></li>
         </ul>
       </nav>
-      <button onclick="location.href='contact.html'" class="btn-work-together">Let's Work Together</button>
+      
+      <a href="contact.html" class="btn-work-together">Let's Create</a>
     </div>
   </header>
 
   <div class="container page-hero">
     
-    <a href="index.html" style="color: var(--accent-lime); text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px;">
-      <i data-lucide="arrow-left"></i> Back to Homepage
+    <a href="index.html" style="color: var(--accent-cyan); text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px; font-family: var(--font-mono); font-size: 0.9rem;">
+      <i data-lucide="arrow-left"></i> Back to Studio
     </a>
 
     <div style="display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 40px; align-items: center; margin-bottom: 48px;">
@@ -81,19 +93,19 @@
         <h1 style="font-family: var(--font-heading); font-size: 2.8rem; font-weight: 900; line-height: 1.1; margin-bottom: 16px;">
           ABOUT <span class="text-gradient">VINAYAK VALLABH RAI</span>
         </h1>
-        <p style="color: var(--accent-lime); font-size: 1.1rem; font-weight: 700; margin-bottom: 20px;">
-          Designer • Video Editor • AI Content Creator
+        <p style="color: var(--accent-cyan); font-size: 1.1rem; font-weight: 700; margin-bottom: 20px; font-family: var(--font-mono);">
+          Video Editor • Motion Designer • AI Content Creator
         </p>
         <p style="color: var(--text-muted); line-height: 1.75; font-size: 0.98rem; margin-bottom: 16px;">
-          I am a passionate Designer and Video Editor with a strong interest in creating visual content that connects, inspires, and delivers real-world results. I love working with new ideas, brands, and content creators to turn visions into high-impact digital experiences.
+          I am a passionate Video Editor and Visual Storyteller with a deep focus on creating narrative rhythm, emotional retention, and high-converting visual media. I collaborate with tech startups, documentary channels, and global brands to turn raw footage into cinematic experiences.
         </p>
         <p style="color: var(--text-muted); line-height: 1.75; font-size: 0.98rem; margin-bottom: 24px;">
-          Currently based in <strong>Mohali, Punjab, India</strong>, my editing style combines cinematic storytelling with high-retention pacing, advanced VFX compositing, and generative AI video tools. I am also the founder of <strong>The Prime Doc</strong> YouTube channel.
+          Currently based in <strong>Mohali, Punjab, India</strong>, my editing style combines precision storytelling with high-retention pacing, advanced VFX compositing, and generative AI video tools. I am also the lead editor for <strong>The Prime Doc</strong> documentary channel.
         </p>
 
         <div style="display: flex; gap: 16px; flex-wrap: wrap;">
-          <a href="resume-preview.html" class="btn-primary">Download Resume <i data-lucide="download"></i></a>
-          <a href="contact.html" class="btn-secondary">Hire Me For Project <i data-lucide="mail"></i></a>
+          <a href="contact.html" class="btn-primary">Hire Me For Project <i data-lucide="send"></i></a>
+          <a href="work.html" class="btn-secondary">Explore Work <i data-lucide="arrow-right"></i></a>
         </div>
       </div>
 
@@ -113,7 +125,7 @@
         <div class="spec-badge">
           <div class="spec-icon"><i data-lucide="cpu"></i></div>
           <div>
-            <label style="font-size: 0.7rem; color: var(--text-muted); font-weight: 700; display: block;">HIGH PERFORMANCE CPU</label>
+            <label style="font-size: 0.72rem; color: var(--text-muted); font-weight: 700; display: block; font-family: var(--font-mono);">HIGH PERFORMANCE RIG</label>
             <strong style="color: #fff; font-size: 0.95rem;">Multi-Threaded Rendering</strong>
           </div>
         </div>
@@ -121,15 +133,15 @@
         <div class="spec-badge">
           <div class="spec-icon"><i data-lucide="layers"></i></div>
           <div>
-            <label style="font-size: 0.7rem; color: var(--text-muted); font-weight: 700; display: block;">DUAL MONITOR DISPLAY</label>
-            <strong style="color: #fff; font-size: 0.95rem;">Timeline + Color Preview</strong>
+            <label style="font-size: 0.72rem; color: var(--text-muted); font-weight: 700; display: block; font-family: var(--font-mono);">CALIBRATED 10-BIT DISPLAY</label>
+            <strong style="color: #fff; font-size: 0.95rem;">Timeline + Rec.709 Color Preview</strong>
           </div>
         </div>
 
         <div class="spec-badge">
           <div class="spec-icon"><i data-lucide="headphones"></i></div>
           <div>
-            <label style="font-size: 0.7rem; color: var(--text-muted); font-weight: 700; display: block;">AUDIO MONITORING</label>
+            <label style="font-size: 0.72rem; color: var(--text-muted); font-weight: 700; display: block; font-family: var(--font-mono);">AUDIO MONITORING</label>
             <strong style="color: #fff; font-size: 0.95rem;">Foley & Sound Design Studio</strong>
           </div>
         </div>
@@ -147,12 +159,12 @@
       </div>
 
       <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; color: var(--text-muted); line-height: 1.7;">
-        <div style="background: #09090f; padding: 24px; border-radius: 16px;">
+        <div style="background: rgba(255,255,255,0.02); padding: 24px; border-radius: 16px; border-left: 3px solid var(--accent-cyan);">
           <h4 style="color: #fff; font-size: 1.1rem; margin-bottom: 8px;">1. Story First Approach</h4>
           <p style="font-size: 0.9rem;">Every cut, sound effect, and visual effect must serve the core narrative to keep viewers hooked from the first 5 seconds to the end.</p>
         </div>
 
-        <div style="background: #09090f; padding: 24px; border-radius: 16px;">
+        <div style="background: rgba(255,255,255,0.02); padding: 24px; border-radius: 16px; border-left: 3px solid var(--accent-blue-light);">
           <h4 style="color: #fff; font-size: 1.1rem; margin-bottom: 8px;">2. Generative AI Integration</h4>
           <p style="font-size: 0.9rem;">Leveraging AI prompt tools and neural video engines to create graphics and effects that traditional workflows cannot replicate.</p>
         </div>
@@ -162,10 +174,9 @@
   </div>
 
   <footer class="footer-bottom container">
-    <p>© 2026 Vinayak Vallabh Rai. Mohali, Punjab, India.</p>
+    <p>© 2026 VisualNexa • Vinayak Vallabh Rai • All Rights Reserved.</p>
   </footer>
 
-  <script src="static/js/three-canvas.js"></script>
   <script src="script.js"></script>
   <script>lucide.createIcons();</script>
 </body>

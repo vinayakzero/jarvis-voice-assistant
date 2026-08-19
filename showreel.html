@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Showreel Breakdown • VisualNexa | Vinayak Vallabh Rai</title>
+  <meta name="description" content="Cinematic Showreel Breakdown by VisualNexa - Vinayak Vallabh Rai. Professional Video Editing, Color Grading, and VFX.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Feather / Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- FIXED HEADER & NAVIGATION -->
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <img src="assets/images/visualnexa_logo.png" alt="VisualNexa" class="logo-img">
+        <div class="logo-meta">
+          <span class="logo-title">VISUALNEXA</span>
+          <span class="logo-sub">VINAYAK VALLABH RAI • VIDEO EDITOR</span>
+        </div>
+      </a>
+      
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">STUDIO</a></li>
+          <li><a href="showreel.html" class="active">SHOWREEL</a></li>
+          <li><a href="work.html">WORK</a></li>
+          <li><a href="toolkit.html">TOOLKIT</a></li>
+          <li><a href="services.html">SERVICES</a></li>
+          <li><a href="youtube.html">YOUTUBE</a></li>
+          <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+      </nav>
+      
+      <a href="contact.html" class="btn-work-together">Let's Create</a>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="section-padding" style="padding-top: 140px; padding-bottom: 60px;">
+    <div class="container">
+      <span class="section-tag">CINEMATIC MASTER REEL</span>
+      <h1 class="section-title">2026 EDITING <span class="text-gradient">SHOWREEL</span></h1>
+      <p style="color: var(--text-sub); font-size: 1.15rem; max-width: 720px; line-height: 1.7; margin-bottom: 40px;">
+        A high-octane compilation of narrative documentary cuts, commercial ad campaigns, visual effects compositing, and dynamic retention-driven storytelling.
+      </p>
+
+      <!-- Main Video Player Card -->
+      <div class="showreel-wrapper" id="showreelWrapper" style="margin-bottom: 60px;">
+        <div class="showreel-viewport" id="showreelViewport">
+          <img src="assets/images/proj_trailer.jpg" alt="Vinayak Showreel" class="showreel-backdrop-img">
+          
+          <div class="showreel-overlay-center" id="showreelOverlay" onclick="openVideoModal('trailer')">
+            <div class="btn-large-play">
+              <i data-lucide="play"></i>
+            </div>
+            <span class="showreel-tagline">WATCH MASTER SHOWREEL (4K UHD • 02:45)</span>
+          </div>
+        </div>
+
+        <div class="player-controls-bar">
+          <div class="player-controls-left">
+            <button class="btn-ctrl-play" onclick="openVideoModal('trailer')">
+              <i data-lucide="play"></i>
+            </button>
+            <span class="player-time-readout">00:00 / 02:45 • 4K 24FPS</span>
+          </div>
+
+          <div class="player-scrub-container" onclick="openVideoModal('trailer')">
+            <div class="player-scrub-fill" style="width: 45%;"></div>
+          </div>
+
+          <div>
+            <button class="btn-ctrl-play" onclick="openVideoModal('trailer')">
+              <i data-lucide="maximize-2"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- TECHNICAL SPECS & SHOT BREAKDOWN -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 60px;">
+        
+        <!-- Technical Specifications -->
+        <div style="background: var(--bg-card); border: 1px solid var(--bg-card-border); border-radius: 24px; padding: 36px;">
+          <span class="section-tag">MASTER SPECS</span>
+          <h3 style="font-family: var(--font-heading); font-size: 1.6rem; font-weight: 800; margin-bottom: 24px;">TECHNICAL PIPELINE</h3>
+          
+          <div style="display: flex; flex-direction: column; gap: 16px;">
+            <div style="display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 12px;">
+              <span style="color: var(--text-muted); font-family: var(--font-mono); font-size: 0.85rem;">RESOLUTION</span>
+              <span style="font-weight: 700; color: #fff;">3840 x 2160 (4K UHD)</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 12px;">
+              <span style="color: var(--text-muted); font-family: var(--font-mono); font-size: 0.85rem;">FRAME RATE</span>
+              <span style="font-weight: 700; color: var(--accent-cyan);">24.00 FPS (Cinematic)</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 12px;">
+              <span style="color: var(--text-muted); font-family: var(--font-mono); font-size: 0.85rem;">COLOR SPACE</span>
+              <span style="font-weight: 700; color: #fff;">DaVinci Wide Gamut / Rec.709</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 12px;">
+              <span style="color: var(--text-muted); font-family: var(--font-mono); font-size: 0.85rem;">MASTER CODEC</span>
+              <span style="font-weight: 700; color: #fff;">Apple ProRes 422 HQ</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; padding-bottom: 4px;">
+              <span style="color: var(--text-muted); font-family: var(--font-mono); font-size: 0.85rem;">AUDIO TARGET</span>
+              <span style="font-weight: 700; color: var(--accent-cyan);">-14 LUFS (Broadcast Standard)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Software Stack Used in Reel -->
+        <div style="background: var(--bg-card); border: 1px solid var(--bg-card-border); border-radius: 24px; padding: 36px;">
+          <span class="section-tag">SOFTWARE STACK</span>
+          <h3 style="font-family: var(--font-heading); font-size: 1.6rem; font-weight: 800; margin-bottom: 24px;">POST-PRODUCTION SUITE</h3>
+          
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+            <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; padding: 18px;">
+              <h4 style="color: var(--accent-cyan); font-size: 1rem; font-weight: 800; margin-bottom: 6px;">Premiere Pro</h4>
+              <p style="color: var(--text-muted); font-size: 0.82rem;">A-Roll Story Cut, Multi-cam Sync, Speed Ramps</p>
+            </div>
+            <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; padding: 18px;">
+              <h4 style="color: var(--accent-cyan); font-size: 1rem; font-weight: 800; margin-bottom: 6px;">DaVinci Resolve</h4>
+              <p style="color: var(--text-muted); font-size: 0.82rem;">Primary/Secondary Color Grade, Scopes</p>
+            </div>
+            <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; padding: 18px;">
+              <h4 style="color: var(--accent-cyan); font-size: 1rem; font-weight: 800; margin-bottom: 6px;">After Effects</h4>
+              <p style="color: var(--text-muted); font-size: 0.82rem;">3D Tracking, Kinetic Titles, VFX Particles</p>
+            </div>
+            <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; padding: 18px;">
+              <h4 style="color: var(--accent-cyan); font-size: 1rem; font-weight: 800; margin-bottom: 6px;">Adobe Audition</h4>
+              <p style="color: var(--text-muted); font-size: 0.82rem;">Layered Sound FX, Dialogue EQ, Foley Mix</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- SHOT-BY-SHOT TIMELINE BREAKDOWN -->
+      <div style="background: var(--bg-card); border: 1px solid var(--bg-card-border); border-radius: 24px; padding: 40px;">
+        <span class="section-tag">EDITING BREAKDOWN</span>
+        <h3 style="font-family: var(--font-heading); font-size: 1.8rem; font-weight: 800; margin-bottom: 28px;">SHOT-BY-SHOT TIMELINE FLOW</h3>
+
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+          
+          <div style="display: grid; grid-template-columns: 120px 1fr; gap: 24px; padding: 20px; background: rgba(255,255,255,0.02); border-radius: 16px; border-left: 3px solid var(--accent-cyan);">
+            <span style="font-family: var(--font-mono); font-weight: 800; color: var(--accent-cyan); font-size: 1rem;">00:00 - 00:15</span>
+            <div>
+              <h4 style="font-size: 1.1rem; font-weight: 800; margin-bottom: 4px;">Opening Retention Hook & 3D Title Impact</h4>
+              <p style="color: var(--text-muted); font-size: 0.9rem;">Fast-paced cinematic montage with rapid sound design whooshes, optical flash transitions, and heavy low-frequency cinematic hits.</p>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 120px 1fr; gap: 24px; padding: 20px; background: rgba(255,255,255,0.02); border-radius: 16px; border-left: 3px solid var(--accent-blue-light);">
+            <span style="font-family: var(--font-mono); font-weight: 800; color: var(--accent-blue-light); font-size: 1rem;">00:15 - 00:55</span>
+            <div>
+              <h4 style="font-size: 1.1rem; font-weight: 800; margin-bottom: 4px;">Documentary Storytelling & Dramatic Pacing</h4>
+              <p style="color: var(--text-muted); font-size: 0.9rem;">Multi-track dialogue editing, dramatic pause cuts, historical archive film grain integration, and rich skin-tone preservation.</p>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 120px 1fr; gap: 24px; padding: 20px; background: rgba(255,255,255,0.02); border-radius: 16px; border-left: 3px solid var(--accent-cyan);">
+            <span style="font-family: var(--font-mono); font-weight: 800; color: var(--accent-cyan); font-size: 1rem;">00:55 - 01:45</span>
+            <div>
+              <h4 style="font-size: 1.1rem; font-weight: 800; margin-bottom: 4px;">Commercial Product Ads & Dynamic Speed Ramps</h4>
+              <p style="color: var(--text-muted); font-size: 0.9rem;">Seamless macro speed ramping, rhythmic beat-matched cuts, customized lighting flare passes, and product highlight glows.</p>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 120px 1fr; gap: 24px; padding: 20px; background: rgba(255,255,255,0.02); border-radius: 16px; border-left: 3px solid var(--accent-blue);">
+            <span style="font-family: var(--font-mono); font-weight: 800; color: var(--accent-blue); font-size: 1rem;">01:45 - 02:45</span>
+            <div>
+              <h4 style="font-size: 1.1rem; font-weight: 800; margin-bottom: 4px;">Visual Effects Climax & Outro Call to Action</h4>
+              <p style="color: var(--text-muted); font-size: 0.9rem;">Explosive VFX trailer compilation, 3D particle dissolution, orchestral trailer crescendo, and final brand lockup.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <div style="text-align: center; margin-top: 40px;">
+          <a href="contact.html" class="btn-primary">
+            Hire VisualNexa For Your Next Edit <i data-lucide="send"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- VIDEO MODAL PLAYER -->
+  <div id="videoModal" class="modal-overlay">
+    <div class="modal-container">
+      <button id="modalClose" class="modal-close" onclick="closeVideoModal()"><i data-lucide="x"></i></button>
+      <h3 id="modalVideoTitle" style="font-family: var(--font-heading); font-size: 1.3rem; font-weight: 800; margin-bottom: 16px;">Video Player</h3>
+      <div style="position: relative; padding-top: 56.25%; width: 100%; border-radius: 12px; overflow: hidden; background: #000;">
+        <iframe id="modalVideoFrame" style="position: absolute; top:0; left:0; width:100%; height:100%; border:none;" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer-bottom container">
+    <p>© 2026 VisualNexa • Vinayak Vallabh Rai • All Rights Reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

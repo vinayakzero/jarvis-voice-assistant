@@ -16,17 +16,33 @@ def about():
 def education():
     return render_template('education-detail.html', active_page='about')
 
+@app.route('/showreel')
+def showreel():
+    return render_template('showreel.html', active_page='showreel')
+
+@app.route('/work')
+def work():
+    return render_template('work.html', active_page='work')
+
+@app.route('/toolkit')
+def toolkit():
+    return render_template('toolkit.html', active_page='toolkit')
+
+@app.route('/services')
+def services():
+    return render_template('services.html', active_page='services')
+
 @app.route('/skills')
 def skills():
-    return render_template('skills-detail.html', active_page='skills')
+    return render_template('toolkit.html', active_page='toolkit')
 
 @app.route('/projects')
 def projects():
-    return render_template('project-detail.html', active_page='projects')
+    return render_template('work.html', active_page='work')
 
 @app.route('/youtube')
 def youtube():
-    return render_template('youtube-detail.html', active_page='youtube')
+    return render_template('youtube.html', active_page='youtube')
 
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
