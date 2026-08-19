@@ -1,178 +1,93 @@
-/* VINAYAK VALLABH RAI - INTERACTIVE 3D JAVASCRIPT LOGIC */
+/* =========================================================================
+   VINAYAK VALLABH RAI - CINEMATIC PORTFOLIO CORE INTERACTIONS
+   ========================================================================= */
 
 document.addEventListener('DOMContentLoaded', () => {
-  console.log("3D Interactive Portfolio Initialized for Vinayak Vallabh Rai");
+  console.log("The Editing Machine initialized for Vinayak Vallabh Rai");
 
   /* -------------------------------------------------------------
-     1. NAVIGATION ACTIVE LINK HIGHLIGHT & GLASS NAVBAR SCROLL
+     1. NAVIGATION SCROLL CLASS
   ------------------------------------------------------------- */
-  const sections = document.querySelectorAll('section');
-  const navLinks = document.querySelectorAll('.nav-links a');
   const navbar = document.querySelector('.navbar');
-
   window.addEventListener('scroll', () => {
-    let current = '';
-    const scrollPos = window.scrollY;
-
     if (navbar) {
-      if (scrollPos > 40) {
+      if (window.scrollY > 50) {
         navbar.classList.add('scrolled');
       } else {
         navbar.classList.remove('scrolled');
       }
     }
-
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop - 180;
-      if (scrollPos >= sectionTop) {
-        current = section.getAttribute('id');
-      }
-    });
-
-    navLinks.forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href') === `#${current}`) {
-        link.classList.add('active');
-      }
-    });
   });
 
   /* -------------------------------------------------------------
-     2. 3D CARD TILT & GLARE EFFECT ENGINE
+     2. CUSTOM CINEMATIC SHOWREEL PLAYER
   ------------------------------------------------------------- */
-  function init3DTiltCards() {
-    const tiltElements = document.querySelectorAll('.project-card, .skill-card, .info-box, .photo-wrapper, .info-card-floating, .stat-card');
+  const showreelOverlay = document.getElementById('showreelOverlay');
+  const btnShowreelPlay = document.getElementById('btnShowreelPlay');
+  const btnCtrlPlay = document.getElementById('btnCtrlPlay');
+  const scrubFill = document.getElementById('playerScrubFill');
+  const timeReadout = document.getElementById('playerTimeReadout');
+  const btnFullscreen = document.getElementById('btnFullscreen');
+  const showreelWrapper = document.getElementById('showreelWrapper');
 
-    tiltElements.forEach(card => {
-      // Ensure glare overlay element
-      if (!card.querySelector('.tilt-glare')) {
-        const glareEl = document.createElement('div');
-        glareEl.className = 'tilt-glare';
-        card.appendChild(glareEl);
-      }
+  let isPlaying = false;
+  let playInterval = null;
+  let currentSeconds = 0;
+  const totalSeconds = 165; // 02:45 total duration
 
-      const glare = card.querySelector('.tilt-glare');
-
-      card.addEventListener('mousemove', (e) => {
-        const rect = card.getBoundingClientRect();
-        const cardWidth = rect.width;
-        const cardHeight = rect.height;
-
-        const mouseX = e.clientX - rect.left;
-        const mouseY = e.clientY - rect.top;
-
-        // Calculate rotation angles (max 18 degrees)
-        const rotateX = ((mouseY / cardHeight) - 0.5) * -24;
-        const rotateY = ((mouseX / cardWidth) - 0.5) * 24;
-
-        // Glare calculation
-        const glareX = (mouseX / cardWidth) * 100;
-        const glareY = (mouseY / cardHeight) * 100;
-
-        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.03, 1.03, 1.03) translateZ(10px)`;
-        card.style.transition = 'transform 0.1s ease-out';
-
-        if (glare) {
-          glare.style.background = `radial-gradient(circle at ${glareX}% ${glareY}%, rgba(255, 255, 255, 0.25) 0%, rgba(190, 242, 100, 0.08) 40%, rgba(0, 0, 0, 0) 80%)`;
-          glare.style.opacity = '1';
-        }
-      });
-
-      card.addEventListener('mouseleave', () => {
-        card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1) translateZ(0px)';
-        card.style.transition = 'transform 0.5s cubic-bezier(0.23, 1, 0.32, 1)';
-
-        if (glare) {
-          glare.style.opacity = '0';
-          glare.style.transition = 'opacity 0.5s ease-out';
-        }
-      });
-    });
+  function formatTime(s) {
+    const mins = String(Math.floor(s / 60)).padStart(2, '0');
+    const secs = String(Math.floor(s % 60)).padStart(2, '0');
+    return `${mins}:${secs}`;
   }
 
-  init3DTiltCards();
+  function toggleShowreelPlay() {
+    isPlaying = !isPlaying;
 
-  /* -------------------------------------------------------------
-     3. HERO FLOATING BADGES 3D PARALLAX EFFECT
-  ------------------------------------------------------------- */
-  const heroVisual = document.querySelector('.hero-visual');
-  const floatingBadges = document.querySelectorAll('.floating-badge');
+    if (isPlaying) {
+      if (showreelOverlay) showreelOverlay.style.display = 'none';
+      if (btnCtrlPlay) btnCtrlPlay.innerHTML = '<i data-lucide="pause"></i>';
+      lucide.createIcons();
 
-  if (heroVisual && floatingBadges.length > 0) {
-    heroVisual.addEventListener('mousemove', (e) => {
-      const rect = heroVisual.getBoundingClientRect();
-      const relX = (e.clientX - rect.left) / rect.width - 0.5;
-      const relY = (e.clientY - rect.top) / rect.height - 0.5;
+      playInterval = setInterval(() => {
+        currentSeconds++;
+        if (currentSeconds > totalSeconds) {
+          currentSeconds = 0;
+          toggleShowreelPlay();
+        }
+        const pct = (currentSeconds / totalSeconds) * 100;
+        if (scrubFill) scrubFill.style.width = `${pct}%`;
+        if (timeReadout) timeReadout.textContent = `${formatTime(currentSeconds)} / ${formatTime(totalSeconds)}`;
+      }, 1000);
 
-      floatingBadges.forEach((badge, idx) => {
-        const factor = (idx + 1) * 20;
-        const moveX = relX * factor;
-        const moveY = relY * factor;
-        badge.style.transform = `translate3d(${moveX}px, ${moveY}px, 30px) rotate(${moveX * 0.2}deg)`;
-      });
-    });
-
-    heroVisual.addEventListener('mouseleave', () => {
-      floatingBadges.forEach((badge) => {
-        badge.style.transform = 'translate3d(0, 0, 0) rotate(0deg)';
-        badge.style.transition = 'transform 0.6s cubic-bezier(0.23, 1, 0.32, 1)';
-      });
-    });
-  }
-
-  /* -------------------------------------------------------------
-     4. FUTURISTIC 3D CYBER CURSOR FOLLOWER
-  ------------------------------------------------------------- */
-  function initCyberCursor() {
-    // Only create cursor for fine pointing devices (desktops)
-    if (window.matchMedia('(pointer: coarse)').matches) return;
-
-    const cursorDot = document.createElement('div');
-    cursorDot.className = 'cyber-cursor-dot';
-
-    const cursorRing = document.createElement('div');
-    cursorRing.className = 'cyber-cursor-ring';
-
-    document.body.appendChild(cursorDot);
-    document.body.appendChild(cursorRing);
-
-    let mouseX = -100;
-    let mouseY = -100;
-    let ringX = -100;
-    let ringY = -100;
-
-    window.addEventListener('mousemove', (e) => {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-      cursorDot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
-    });
-
-    function renderCursorRing() {
-      ringX += (mouseX - ringX) * 0.15;
-      ringY += (mouseY - ringY) * 0.15;
-      cursorRing.style.transform = `translate3d(${ringX}px, ${ringY}px, 0)`;
-      requestAnimationFrame(renderCursorRing);
+      // Trigger video modal for full preview if clicked main play button
+      openVideoModal('trailer');
+    } else {
+      clearInterval(playInterval);
+      if (btnCtrlPlay) btnCtrlPlay.innerHTML = '<i data-lucide="play"></i>';
+      lucide.createIcons();
     }
-    renderCursorRing();
+  }
 
-    // Hover Scaling for Interactive Elements
-    const hoverables = document.querySelectorAll('a, button, .project-card, .skill-card, .info-box, .btn-primary, .btn-secondary, .btn-work-together');
-    hoverables.forEach(el => {
-      el.addEventListener('mouseenter', () => {
-        cursorRing.classList.add('hovering');
-        cursorDot.classList.add('hovering');
-      });
-      el.addEventListener('mouseleave', () => {
-        cursorRing.classList.remove('hovering');
-        cursorDot.classList.remove('hovering');
-      });
+  if (showreelOverlay) {
+    showreelOverlay.addEventListener('click', toggleShowreelPlay);
+  }
+  if (btnCtrlPlay) {
+    btnCtrlPlay.addEventListener('click', toggleShowreelPlay);
+  }
+
+  if (btnFullscreen && showreelWrapper) {
+    btnFullscreen.addEventListener('click', () => {
+      if (!document.fullscreenElement) {
+        showreelWrapper.requestFullscreen().catch(err => console.log(err));
+      } else {
+        document.exitFullscreen();
+      }
     });
   }
 
-  initCyberCursor();
-
   /* -------------------------------------------------------------
-     5. VIDEO MODAL PLAYER SETUP
+     3. VIDEO MODAL PLAYER SETUP
   ------------------------------------------------------------- */
   const videoModal = document.getElementById('videoModal');
   const modalClose = document.getElementById('modalClose');
@@ -181,23 +96,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const videoData = {
     'doc': {
-      title: 'The Prime Documentary - Editing Breakdown',
+      title: 'The Prime Documentary - Editing Breakdown & Color Grade',
       url: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1'
     },
     'watch': {
-      title: 'Product Ads Video - Luxury Watch Commercial',
+      title: 'Product Commercial - Luxury Watch Commercial Edit',
       url: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1'
     },
     'trailer': {
-      title: 'Cinematic Trailer - Visual Effects Showcase',
+      title: 'Cinematic VFX Trailer - Master Showreel Cut',
       url: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1'
     },
     'ai': {
-      title: 'Future is AI - AI UGC Video Creation',
+      title: 'Future of AI - AI UGC Video Production',
       url: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1'
     },
     'yt1': {
-      title: 'The Dark Reality of AI - Documentary',
+      title: 'The Dark Reality of AI - Full Documentary',
       url: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1'
     },
     'yt2': {
@@ -205,13 +120,16 @@ document.addEventListener('DOMContentLoaded', () => {
       url: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1'
     },
     'yt3': {
-      title: 'Documentary Making Process - Behind The Scenes',
+      title: 'Documentary Making Process - Behind The Scenes Breakdown',
       url: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1'
     }
   };
 
   window.openVideoModal = function(key) {
-    const data = videoData[key] || { title: 'Project Preview Video', url: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1' };
+    const data = videoData[key] || {
+      title: 'Project Showcase Video',
+      url: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1'
+    };
     if (modalVideoTitle) modalVideoTitle.textContent = data.title;
     if (modalVideoFrame) modalVideoFrame.src = data.url;
     if (videoModal) videoModal.classList.add('active');
@@ -227,7 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* -------------------------------------------------------------
-     6. CONTACT FORM MODAL
+     4. CONTACT FORM MODAL
   ------------------------------------------------------------- */
   const contactModal = document.getElementById('contactModal');
   const contactClose = document.getElementById('contactClose');
@@ -249,18 +167,18 @@ document.addEventListener('DOMContentLoaded', () => {
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
       closeContactModal();
-      showToast("Message Sent Successfully! Vinayak will contact you soon.");
+      showToast("Message Sent! Vinayak will connect with you within 24 hours.");
       contactForm.reset();
     });
   }
 
   /* -------------------------------------------------------------
-     7. RESUME DOWNLOAD HANDLER
+     5. RESUME DOWNLOAD HANDLER
   ------------------------------------------------------------- */
   window.downloadResume = function(e) {
     if (e && e.preventDefault) e.preventDefault();
     showToast("Downloading Vinayak Vallabh Rai's Resume...");
-    
+
     const link = document.createElement('a');
     link.href = 'assets/Vinayak_Vallabh_Rai_Resume.jpg';
     link.download = 'Vinayak_Vallabh_Rai_Resume.jpg';
@@ -270,7 +188,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   /* -------------------------------------------------------------
-     8. TOAST NOTIFICATION SYSTEM
+     6. TOAST NOTIFICATION SYSTEM
   ------------------------------------------------------------- */
   window.showToast = function(message) {
     const toast = document.getElementById('toastNotification');
