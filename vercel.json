@@ -1,23 +1,15 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "app.py",
-      "use": "@vercel/python"
-    },
-    {
-      "src": "static/**",
-      "use": "@vercel/static"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/static/(.*)",
-      "dest": "/static/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "app.py"
-    }
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/about", "destination": "/about-me-detail.html" },
+    { "source": "/education", "destination": "/education-detail.html" },
+    { "source": "/skills", "destination": "/skills-detail.html" },
+    { "source": "/projects", "destination": "/project-detail.html" },
+    { "source": "/work", "destination": "/project-detail.html" },
+    { "source": "/youtube", "destination": "/youtube-detail.html" },
+    { "source": "/contact", "destination": "/contact.html" },
+    { "source": "/resume", "destination": "/resume-preview.html" }
   ]
 }
