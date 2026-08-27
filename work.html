@@ -47,23 +47,42 @@
   </header>
 
   <!-- WORK HERO -->
-  <section class="section-padding" style="padding-top: 140px; padding-bottom: 40px;">
+  <section class="section-padding" style="padding-top: 140px; padding-bottom: 30px;">
     <div class="container">
       <span class="section-tag">SELECTED CASE STUDIES</span>
       <h1 class="section-title">FEATURED CLIENT <span class="text-gradient">PROJECTS</span></h1>
-      <p style="color: var(--text-sub); font-size: 1.15rem; max-width: 740px; line-height: 1.7;">
+      <p style="color: var(--text-sub); font-size: 1.15rem; max-width: 740px; line-height: 1.7; margin-bottom: 32px;">
         Explore detailed breakdowns of full-length 2D documentaries, B2B SaaS explainer motion graphics, photorealistic AI cinematic pieces, and viral 9:16 UGC video campaigns.
       </p>
+
+      <!-- CATEGORY FILTER BAR -->
+      <div class="work-filter-wrapper">
+        <button class="filter-btn active" onclick="filterProjects('all', this)">
+          <i data-lucide="layers" style="width: 16px; height: 16px;"></i> All Projects <span class="filter-count" id="countAll">6</span>
+        </button>
+        <button class="filter-btn" onclick="filterProjects('doc', this)">
+          <i data-lucide="clapperboard" style="width: 16px; height: 16px;"></i> 2D Documentaries <span class="filter-count">3</span>
+        </button>
+        <button class="filter-btn" onclick="filterProjects('saas', this)">
+          <i data-lucide="monitor" style="width: 16px; height: 16px;"></i> B2B SaaS & Motion <span class="filter-count">1</span>
+        </button>
+        <button class="filter-btn" onclick="filterProjects('ai', this)">
+          <i data-lucide="sparkles" style="width: 16px; height: 16px;"></i> AI Cinematic & VFX <span class="filter-count">1</span>
+        </button>
+        <button class="filter-btn" onclick="filterProjects('ugc', this)">
+          <i data-lucide="smartphone" style="width: 16px; height: 16px;"></i> Vertical UGC Ads (9:16) <span class="filter-count">1</span>
+        </button>
+      </div>
     </div>
   </section>
 
   <!-- CASE STUDIES LIST -->
-  <section class="section-padding" style="padding-top: 20px;">
+  <section class="section-padding" style="padding-top: 10px;">
     <div class="container">
-      <div class="cinematic-projects-list">
+      <div class="cinematic-projects-list" id="projectsContainer">
         
         <!-- Project 01: The Prime Documentary (Brahmeshwar Mukhiya) -->
-        <div class="cinematic-project-row">
+        <div class="cinematic-project-row" data-category="doc">
           <div class="proj-visual-col" onclick="openVideoModal('doc')">
             <img src="assets/images/yt_brahmeshwar.jpg" alt="The Prime Documentary - Brahmeshwar Mukhiya">
             <div class="proj-play-badge">
@@ -75,9 +94,9 @@
               <span class="proj-tag-badge">2D ANIMATED DOCUMENTARY</span>
               <span class="proj-year">OFFICE CHANNEL • THE PRIME DOC</span>
             </div>
-            <h3 class="proj-title">The Prime Documentary: Brahmeshwar Mukhiya</h3>
+            <h3 class="proj-title">The Prime Doc: Brahmeshwar Mukhiya</h3>
             <p class="proj-desc">
-              Full-length 2D animated investigative crime documentary created for my company channel <strong>The Prime Doc</strong>. I handled the complete video editing: script-to-timeline mapping, dynamic 2D animated character scenes, Ranvir Sena archival newspaper evidence, and dramatic retention pacing.
+              Full-length 2D animated investigative crime documentary created for company channel <strong>The Prime Doc</strong>. I handled the complete video editing: script-to-timeline mapping, dynamic 2D animated character scenes, Ranvir Sena archival newspaper evidence, and dramatic retention pacing.
             </p>
             <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 14px; margin: 8px 0;">
               <strong style="color: var(--accent-cyan); font-size: 0.85rem; font-family: var(--font-mono);">EDITING HIGHLIGHT:</strong>
@@ -89,7 +108,7 @@
               <span class="tool-pill">Adobe Audition</span>
               <span class="tool-pill">4K UHD Master</span>
             </div>
-            <div style="margin-top: 10px; display: flex; gap: 14px; align-items: center;">
+            <div style="margin-top: 10px; display: flex; gap: 14px; align-items: center; flex-wrap: wrap;">
               <button onclick="openVideoModal('doc')" class="btn-primary">
                 Watch Full Video <i data-lucide="play"></i>
               </button>
@@ -100,8 +119,84 @@
           </div>
         </div>
 
-        <!-- Project 02: B2B SaaS Product Demo & UI Motion Design -->
-        <div class="cinematic-project-row">
+        <!-- Project 02: The Prime Doc (Muhnochwa Mystery) -->
+        <div class="cinematic-project-row" data-category="doc">
+          <div class="proj-visual-col" onclick="openVideoModal('muhnochwa')">
+            <img src="assets/images/yt_muhnochwa.jpg" alt="Muhnochwa Mystery 2002 Documentary">
+            <div class="proj-play-badge">
+              <div class="proj-play-icon"><i data-lucide="play"></i></div>
+            </div>
+          </div>
+          <div class="proj-info-col">
+            <div class="proj-meta-header">
+              <span class="proj-tag-badge">2D ANIMATED INVESTIGATION</span>
+              <span class="proj-year">OFFICE CHANNEL • THE PRIME DOC</span>
+            </div>
+            <h3 class="proj-title">The Prime Doc: Muhnochwa 2002 Mystery</h3>
+            <p class="proj-desc">
+              Investigative documentary exploring the mass hysteria and urban legend of 2002 Uttar Pradesh. Layered with eerie sound effects, suspenseful pacing, atmospheric motion graphics, and archival eyewitness reconstruction.
+            </p>
+            <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 14px; margin: 8px 0;">
+              <strong style="color: var(--accent-cyan); font-size: 0.85rem; font-family: var(--font-mono);">EDITING HIGHLIGHT:</strong>
+              <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 4px;">Cinematic soundscape using low-frequency rumbles, tension risers, and dark ambient color tones.</p>
+            </div>
+            <div class="proj-tools-pills">
+              <span class="tool-pill">Premiere Pro</span>
+              <span class="tool-pill">After Effects</span>
+              <span class="tool-pill">DaVinci Resolve</span>
+              <span class="tool-pill">Sound Foley</span>
+            </div>
+            <div style="margin-top: 10px; display: flex; gap: 14px; align-items: center; flex-wrap: wrap;">
+              <button onclick="openVideoModal('muhnochwa')" class="btn-primary">
+                Watch Full Video <i data-lucide="play"></i>
+              </button>
+              <a href="https://youtu.be/EJCvdtasEKY?si=Mrcfj_9f9PK_dMxm" target="_blank" style="color: #ff0000; font-family: var(--font-mono); font-size: 0.85rem; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+                <i data-lucide="external-link" style="width: 15px; height: 15px;"></i> Open on YouTube
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 03: The Prime Doc (Bharat Tiwari Investigation) -->
+        <div class="cinematic-project-row" data-category="doc">
+          <div class="proj-visual-col" onclick="openVideoModal('bharat')">
+            <img src="assets/images/yt_bharat.jpg" alt="Bharat Tiwari Story Documentary">
+            <div class="proj-play-badge">
+              <div class="proj-play-icon"><i data-lucide="play"></i></div>
+            </div>
+          </div>
+          <div class="proj-info-col">
+            <div class="proj-meta-header">
+              <span class="proj-tag-badge">2D CRIME DOCUMENTARY</span>
+              <span class="proj-year">OFFICE CHANNEL • THE PRIME DOC</span>
+            </div>
+            <h3 class="proj-title">The Prime Doc: Bharat Tiwari Investigation</h3>
+            <p class="proj-desc">
+              Emotional real-life investigative documentary breakdown featuring 2D character animation, newspaper timeline maps, and investigative storytelling crafted for 70%+ audience watch time.
+            </p>
+            <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 14px; margin: 8px 0;">
+              <strong style="color: var(--accent-cyan); font-size: 0.85rem; font-family: var(--font-mono);">EDITING HIGHLIGHT:</strong>
+              <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 4px;">Dynamic speed ramps and text kinetic tracking matching the narrative cadence of the voiceover.</p>
+            </div>
+            <div class="proj-tools-pills">
+              <span class="tool-pill">Adobe Premiere Pro</span>
+              <span class="tool-pill">Character Animator</span>
+              <span class="tool-pill">After Effects</span>
+              <span class="tool-pill">High Retention</span>
+            </div>
+            <div style="margin-top: 10px; display: flex; gap: 14px; align-items: center; flex-wrap: wrap;">
+              <button onclick="openVideoModal('bharat')" class="btn-primary">
+                Watch Full Video <i data-lucide="play"></i>
+              </button>
+              <a href="https://youtu.be/5SQomrgnVao?si=659lHYH-gNi9NwLg" target="_blank" style="color: #ff0000; font-family: var(--font-mono); font-size: 0.85rem; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+                <i data-lucide="external-link" style="width: 15px; height: 15px;"></i> Open on YouTube
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 04: B2B SaaS Product Demo & UI Motion Design -->
+        <div class="cinematic-project-row" data-category="saas">
           <div class="proj-visual-col" onclick="openVideoModal('saas')">
             <img src="assets/images/proj_saas.jpg" alt="B2B SaaS Video Edit" style="width: 100%; height: 100%; object-fit: cover; display: block;">
             <div class="proj-play-badge">
@@ -135,8 +230,8 @@
           </div>
         </div>
 
-        <!-- Project 03: BMW M4 Underground — AI Cinematic Video & VFX -->
-        <div class="cinematic-project-row">
+        <!-- Project 05: BMW M4 Underground — AI Cinematic Video & VFX -->
+        <div class="cinematic-project-row" data-category="ai">
           <div class="proj-visual-col" onclick="openVideoModal('bmw')">
             <img src="assets/images/proj_bmw.jpg" alt="BMW M4 Underground AI Cinematic Video" style="width: 100%; height: 100%; object-fit: cover; display: block;">
             <div class="proj-play-badge">
@@ -170,8 +265,8 @@
           </div>
         </div>
 
-        <!-- Project 04: Canada Client UGC Viral Ad Campaign (Yellow Gas Station 9:16) -->
-        <div class="cinematic-project-row">
+        <!-- Project 06: Canada Client UGC Viral Ad Campaign (Yellow Gas Station 9:16) -->
+        <div class="cinematic-project-row" data-category="ugc">
           <div class="proj-visual-col" onclick="openVideoModal('ugc_canada')">
             <img src="assets/images/thumb_ugc_canada.jpg" alt="Canada Client UGC Viral Ad" style="width: 100%; height: 100%; object-fit: cover; display: block;">
             <div class="proj-play-badge">
@@ -234,6 +329,32 @@
   </footer>
 
   <script src="script.js"></script>
-  <script>lucide.createIcons();</script>
+  <script>
+    lucide.createIcons();
+
+    function filterProjects(category, btnElement) {
+      // Update active button state
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      filterBtns.forEach(btn => btn.classList.remove('active'));
+      if (btnElement) btnElement.classList.add('active');
+
+      // Filter project cards
+      const projectRows = document.querySelectorAll('.cinematic-project-row');
+      projectRows.forEach(row => {
+        const cat = row.getAttribute('data-category');
+        if (category === 'all' || cat === category) {
+          row.classList.remove('is-hidden');
+          row.style.opacity = '0';
+          row.style.transform = 'scale(0.98)';
+          setTimeout(() => {
+            row.style.opacity = '1';
+            row.style.transform = 'scale(1)';
+          }, 30);
+        } else {
+          row.classList.add('is-hidden');
+        }
+      });
+    }
+  </script>
 </body>
 </html>

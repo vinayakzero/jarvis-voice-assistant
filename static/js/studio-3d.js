@@ -13,7 +13,7 @@
   let isMobile = false;
 
   // Camera animation target values for GSAP & mouse parallax
-  window.studioCameraState = {
+  window.studioCameraState = window.studioCameraState || {
     posX: 0,
     posY: 3.5,
     posZ: 14,
@@ -25,18 +25,24 @@
     motionActive: 0 // 0 to 1
   };
 
-  document.addEventListener('DOMContentLoaded', () => {
+  function checkAndInit() {
     if (typeof THREE === 'undefined') {
-      console.warn('Three.js not loaded. Retrying...');
-      setTimeout(initStudio3D, 400);
+      setTimeout(checkAndInit, 200);
       return;
     }
     initStudio3D();
-  });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', checkAndInit);
+  } else {
+    checkAndInit();
+  }
 
   function initStudio3D() {
     const container = document.getElementById('studio-canvas-container');
     if (!container) return;
+    if (container.querySelector('canvas')) return; // Avoid duplicate canvases
 
     isMobile = window.innerWidth <= 768;
 
@@ -54,12 +60,18 @@
     );
     camera.position.set(0, 3.5, 14);
 
-    // 3. RENDERER SETUP
-    renderer = new THREE.WebGLRenderer({
-      antialias: true,
-      powerPreference: 'high-performance',
-      alpha: false
-    });
+    // 3. RENDERER SETUP (Safe fallback)
+    try {
+      renderer = new THREE.WebGLRenderer({
+        antialias: !isMobile,
+        powerPreference: 'default',
+        alpha: false,
+        failIfMajorPerformanceCaveat: false
+      });
+    } catch (e) {
+      console.warn('WebGL initialization failed:', e);
+      return;
+    }
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.shadowMap.enabled = true;

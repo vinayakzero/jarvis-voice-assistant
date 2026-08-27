@@ -4,16 +4,22 @@
    Phases: RAW → CUT → COLOR → MOTION → FINAL
    ========================================================================= */
 
-document.addEventListener('DOMContentLoaded', () => {
+function checkAndInitScroll() {
   if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
-    console.warn('GSAP or ScrollTrigger not loaded. Retrying...');
-    setTimeout(initCinematicScroll, 400);
+    setTimeout(checkAndInitScroll, 200);
     return;
   }
   initCinematicScroll();
-});
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', checkAndInitScroll);
+} else {
+  checkAndInitScroll();
+}
 
 function initCinematicScroll() {
+  if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
   gsap.registerPlugin(ScrollTrigger);
 
   // Check accessibility motion preference
@@ -24,7 +30,21 @@ function initCinematicScroll() {
   }
 
   const stage = document.getElementById('studio-stage');
-  if (!stage || !window.studioCameraState) return;
+  if (!stage) return;
+
+  if (!window.studioCameraState) {
+    window.studioCameraState = {
+      posX: 0,
+      posY: 3.5,
+      posZ: 14,
+      lookX: 0,
+      lookY: 1.8,
+      lookZ: 0,
+      playheadProgress: 0,
+      colorGradingIntensity: 0,
+      motionActive: 0
+    };
+  }
 
   const phases = document.querySelectorAll('.story-phase');
   const hudProgress = document.getElementById('hud-progress-fill');

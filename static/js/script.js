@@ -170,45 +170,72 @@ document.addEventListener('DOMContentLoaded', () => {
       url: 'https://www.youtube.com/embed/n7q2PGTjLJk?autoplay=1'
     };
 
-    if (modalVideoTitle) modalVideoTitle.textContent = data.title;
+    const vModal = document.getElementById('videoModal');
+    const vTitle = document.getElementById('modalVideoTitle');
+    let vFrame = document.getElementById('modalVideoFrame');
+    let vHtml5 = document.getElementById('modalHtml5Video');
+    const pContent = document.getElementById('modalPlayerContent') || (vModal ? vModal.querySelector('.modal-container > div') : null);
+
+    if (vTitle) vTitle.textContent = data.title;
 
     if (data.type === 'mp4' || data.url.endsWith('.mp4')) {
-      if (modalVideoFrame) {
-        modalVideoFrame.src = '';
-        modalVideoFrame.style.display = 'none';
+      if (vFrame) {
+        vFrame.src = '';
+        vFrame.style.display = 'none';
       }
-      if (modalHtml5Video) {
-        modalHtml5Video.src = data.url;
-        modalHtml5Video.style.display = 'block';
-        modalHtml5Video.play().catch(e => console.log(e));
+      if (!vHtml5 && pContent) {
+        vHtml5 = document.createElement('video');
+        vHtml5.id = 'modalHtml5Video';
+        vHtml5.controls = true;
+        vHtml5.style.width = '100%';
+        vHtml5.style.maxHeight = '75vh';
+        vHtml5.style.borderRadius = '12px';
+        vHtml5.setAttribute('playsinline', '');
+        pContent.appendChild(vHtml5);
+      }
+      if (vHtml5) {
+        vHtml5.src = data.url;
+        vHtml5.style.display = 'block';
+        vHtml5.load();
+        vHtml5.play().catch(e => console.log('Autoplay policy caught:', e));
       }
     } else {
-      if (modalHtml5Video) {
-        modalHtml5Video.pause();
-        modalHtml5Video.src = '';
-        modalHtml5Video.style.display = 'none';
+      if (vHtml5) {
+        vHtml5.pause();
+        vHtml5.src = '';
+        vHtml5.style.display = 'none';
       }
-      if (modalVideoFrame) {
-        modalVideoFrame.src = data.url;
-        modalVideoFrame.style.display = 'block';
+      if (vFrame) {
+        vFrame.src = data.url;
+        vFrame.style.display = 'block';
       }
     }
 
-    if (videoModal) videoModal.classList.add('active');
+    if (vModal) vModal.classList.add('active');
   };
 
   window.closeVideoModal = function() {
-    if (videoModal) videoModal.classList.remove('active');
-    if (modalVideoFrame) modalVideoFrame.src = '';
-    if (modalHtml5Video) {
-      modalHtml5Video.pause();
-      modalHtml5Video.src = '';
+    const vModal = document.getElementById('videoModal');
+    const vFrame = document.getElementById('modalVideoFrame');
+    const vHtml5 = document.getElementById('modalHtml5Video');
+
+    if (vModal) vModal.classList.remove('active');
+    if (vFrame) vFrame.src = '';
+    if (vHtml5) {
+      vHtml5.pause();
+      vHtml5.src = '';
+      vHtml5.style.display = 'none';
     }
   };
 
-  if (modalClose) {
-    modalClose.addEventListener('click', closeVideoModal);
-  }
+  document.addEventListener('click', (e) => {
+    if (e.target && (e.target.id === 'modalClose' || e.target.closest('#modalClose'))) {
+      closeVideoModal();
+    }
+    if (e.target && e.target.id === 'videoModal') {
+      closeVideoModal();
+    }
+  });
 
   /* -------------------------------------------------------------
      4. CONTACT FORM MODAL
