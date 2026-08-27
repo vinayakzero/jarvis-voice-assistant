@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let isPlaying = false;
   let playInterval = null;
   let currentSeconds = 0;
-  const totalSeconds = 165; // 02:45 total duration
+  const totalSeconds = 49; // 00:49 exact duration of Tata Sierra EV
 
   function formatTime(s) {
     const mins = String(Math.floor(s / 60)).padStart(2, '0');
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 1000);
 
       // Trigger video modal for full preview if clicked main play button
-      openVideoModal('trailer');
+      openVideoModal('sierra_ev');
     } else {
       clearInterval(playInterval);
       if (btnCtrlPlay) btnCtrlPlay.innerHTML = '<i data-lucide="play"></i>';
@@ -151,10 +151,20 @@ document.addEventListener('DOMContentLoaded', () => {
       type: 'mp4',
       url: 'assets/videos/Basic composition.mp4'
     },
-    'trailer': {
-      title: 'BMW M4 Underground Landscape - AI Cinematic Video & VFX',
+    'sierra_ev': {
+      title: 'Tata Sierra EV — Cinematic Commercial & VFX Edit (00:49)',
       type: 'mp4',
-      url: 'assets/videos/BMW M4 underground landscape.mp4'
+      url: 'assets/videos/Tata Sierra EV.mp4'
+    },
+    'showreel': {
+      title: 'Tata Sierra EV — Cinematic Commercial & VFX Edit (00:49)',
+      type: 'mp4',
+      url: 'assets/videos/Tata Sierra EV.mp4'
+    },
+    'trailer': {
+      title: 'Tata Sierra EV — Cinematic Commercial & VFX Edit (00:49)',
+      type: 'mp4',
+      url: 'assets/videos/Tata Sierra EV.mp4'
     },
     'ai': {
       title: 'Canada Client UGC Viral Ad Campaign (Yellow Gas Station 9:16)',
