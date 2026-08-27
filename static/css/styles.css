@@ -194,12 +194,15 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 20px;
+  flex-wrap: nowrap;
 }
 
 .logo {
   display: flex;
   align-items: center;
   gap: 14px;
+  flex-shrink: 0;
 }
 
 .logo-img {
@@ -242,7 +245,8 @@ a {
 .nav-links {
   display: flex;
   list-style: none;
-  gap: 32px;
+  gap: 28px;
+  align-items: center;
 }
 
 .nav-links a {
@@ -252,6 +256,7 @@ a {
   color: var(--text-muted);
   position: relative;
   padding: 6px 0;
+  white-space: nowrap;
 }
 
 .nav-links a:hover, .nav-links a.active {
@@ -269,6 +274,13 @@ a {
   box-shadow: 0 0 12px var(--accent-cyan);
 }
 
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
 .btn-work-together {
   background: rgba(56, 189, 248, 0.1);
   color: var(--accent-cyan) !important;
@@ -278,6 +290,8 @@ a {
   font-size: 0.85rem;
   font-weight: 700;
   letter-spacing: 0.5px;
+  white-space: nowrap;
+  flex-shrink: 0;
   transition: var(--transition-smooth);
 }
 
