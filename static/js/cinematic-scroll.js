@@ -74,14 +74,18 @@ function initCinematicScroll() {
     }
   });
 
+  const isMobile = window.innerWidth <= 768;
+  const zScale = isMobile ? 1.25 : 1.0;
+  const yOffset = isMobile ? 0.5 : 0.0;
+
   /* -------------------------------------------------------------------------
      PHASE CHOREOGRAPHY
   ------------------------------------------------------------------------- */
   // PHASE 01 (RAW) -> Initial wide studio
   tl.set(window.studioCameraState, {
     posX: 0,
-    posY: 3.5,
-    posZ: 14,
+    posY: 3.5 + yOffset,
+    posZ: 14 * zScale,
     lookX: 0,
     lookY: 1.8,
     lookZ: 0,
@@ -92,9 +96,9 @@ function initCinematicScroll() {
 
   // PHASE 01 -> PHASE 02 (CUT) - Dolly toward timeline & assemble clips
   tl.to(window.studioCameraState, {
-    posX: -0.8,
-    posY: 1.6,
-    posZ: 8.2,
+    posX: isMobile ? 0 : -0.8,
+    posY: 1.6 + yOffset * 0.5,
+    posZ: 8.2 * zScale,
     lookX: 0,
     lookY: 1.0,
     lookZ: 0,
@@ -106,10 +110,10 @@ function initCinematicScroll() {
 
   // PHASE 02 -> PHASE 03 (COLOR) - Angle toward color scopes & warm studio lighting
   tl.to(window.studioCameraState, {
-    posX: 2.2,
-    posY: 2.2,
-    posZ: 5.6,
-    lookX: 1.2,
+    posX: isMobile ? 1.2 : 2.2,
+    posY: 2.2 + yOffset * 0.5,
+    posZ: 5.6 * zScale,
+    lookX: isMobile ? 0.6 : 1.2,
     lookY: 1.8,
     lookZ: 0,
     playheadProgress: 0.52,
@@ -120,10 +124,10 @@ function initCinematicScroll() {
 
   // PHASE 03 -> PHASE 04 (MOTION) - Wide dynamic angle, floating VFX project frames glide
   tl.to(window.studioCameraState, {
-    posX: -2.4,
-    posY: 2.8,
-    posZ: 4.8,
-    lookX: -0.6,
+    posX: isMobile ? -1.2 : -2.4,
+    posY: 2.8 + yOffset * 0.5,
+    posZ: 4.8 * zScale,
+    lookX: isMobile ? 0 : -0.6,
     lookY: 2.2,
     lookZ: 0,
     playheadProgress: 0.76,
@@ -136,7 +140,7 @@ function initCinematicScroll() {
   tl.to(window.studioCameraState, {
     posX: 0,
     posY: 2.22,
-    posZ: 2.5,
+    posZ: isMobile ? 3.0 : 2.5,
     lookX: 0,
     lookY: 2.2,
     lookZ: 0,

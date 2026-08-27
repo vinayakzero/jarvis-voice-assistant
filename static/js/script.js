@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   console.log("The Editing Machine initialized for Vinayak Vallabh Rai");
 
   /* -------------------------------------------------------------
-     1. NAVIGATION SCROLL CLASS
+     1. NAVIGATION SCROLL CLASS & MOBILE MENU
   ------------------------------------------------------------- */
   const navbar = document.querySelector('.navbar');
   window.addEventListener('scroll', () => {
@@ -18,6 +18,27 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   });
+
+  const mobileToggle = document.getElementById('mobileNavToggle');
+  if (mobileToggle && navbar) {
+    mobileToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      navbar.classList.toggle('nav-open');
+    });
+
+    const navLinks = navbar.querySelectorAll('.nav-links a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        navbar.classList.remove('nav-open');
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!navbar.contains(e.target)) {
+        navbar.classList.remove('nav-open');
+      }
+    });
+  }
 
   /* -------------------------------------------------------------
      2. CUSTOM CINEMATIC SHOWREEL PLAYER
